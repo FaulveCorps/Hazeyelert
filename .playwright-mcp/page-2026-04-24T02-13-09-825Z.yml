@@ -1,0 +1,124 @@
+- main [ref=e119]:
+  - generic [ref=e120]:
+    - generic [ref=e121]:
+      - generic [ref=e123]: 9:41
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - img "Hazeyelert logo" [ref=e131]
+            - generic [ref=e132]:
+              - paragraph [ref=e133]: Offline safety quiz
+              - heading "Hazeyelert" [level=1] [ref=e134]
+              - paragraph [ref=e135]: Physical hazard missions for senior high school learners.
+          - generic [ref=e136]:
+            - generic [ref=e137]: Ready offline
+            - button "Settings preview" [ref=e138] [cursor=pointer]: ⚙
+        - generic [ref=e139]:
+          - generic [ref=e140]: Resume mission
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: Featured mission
+              - heading "Start your safety walkthrough" [level=2] [ref=e144]
+              - paragraph [ref=e145]: Work through 4 short chapters and 6 total questions covering slips, electrical hazards, fire response, and workshop noise.
+              - generic [ref=e146]:
+                - generic [ref=e147]: 4 chapters offline
+                - generic [ref=e148]: 6 total checks
+              - generic [ref=e149]:
+                - button "Start mission" [ref=e150] [cursor=pointer]
+                - button "Start from beginning" [ref=e151] [cursor=pointer]
+              - paragraph [ref=e152]: "TODO: swap the placeholder illustrations with the final team-provided reference art."
+            - generic [ref=e153]:
+              - img "Featured safety mission preview" [ref=e155]
+              - generic [ref=e156]:
+                - generic [ref=e157]: ▶
+                - generic [ref=e158]:
+                  - strong [ref=e159]: 6 quick checks
+                  - generic [ref=e160]: Tap-friendly, offline, and presentation-ready
+        - generic [ref=e161]:
+          - article [ref=e162]:
+            - generic [ref=e163]: Chapters
+            - strong [ref=e164]: "4"
+            - paragraph [ref=e165]: Short, linear missions
+          - article [ref=e166]:
+            - generic [ref=e167]: Progress
+            - strong [ref=e168]: 0/6
+            - paragraph [ref=e169]: Instant feedback enabled
+          - article [ref=e170]:
+            - generic [ref=e171]: Mode
+            - strong [ref=e172]: Offline
+            - paragraph [ref=e173]: Ready for classroom demo
+        - generic [ref=e174]:
+          - heading "Incident files" [level=3] [ref=e175]
+          - generic [ref=e176]: 4 learning cards
+        - generic [ref=e177]:
+          - article [ref=e178]:
+            - img "Slip, Trip & Fall illustration" [ref=e179]
+            - paragraph [ref=e180]: Lesson focus
+            - strong [ref=e181]: Slip, Trip & Fall
+            - paragraph [ref=e182]: Wet floors and blocked paths
+          - article [ref=e183]:
+            - img "Electrical illustration" [ref=e184]
+            - paragraph [ref=e185]: Lesson focus
+            - strong [ref=e186]: Electrical
+            - paragraph [ref=e187]: Damaged wires and outlets
+          - article [ref=e188]:
+            - img "Fire Response illustration" [ref=e189]
+            - paragraph [ref=e190]: Lesson focus
+            - strong [ref=e191]: Fire Response
+            - paragraph [ref=e192]: Evacuation and smoke safety
+          - article [ref=e193]:
+            - img "Noise illustration" [ref=e194]
+            - paragraph [ref=e195]: Lesson focus
+            - strong [ref=e196]: Noise
+            - paragraph [ref=e197]: Workshop hearing protection
+        - generic [ref=e198]:
+          - heading "Mission snapshot" [level=3] [ref=e199]
+          - generic [ref=e200]: Current readiness
+        - generic [ref=e201]:
+          - generic [ref=e203]: 0%
+          - generic [ref=e204]:
+            - paragraph [ref=e205]: Progress tracker
+            - heading "Quiz flow is fully offline" [level=3] [ref=e206]
+            - paragraph [ref=e207]: 6 total questions, immediate feedback, and a simple restart at the end.
+        - generic [ref=e208]:
+          - heading "What you'll practice" [level=3] [ref=e209]
+          - generic [ref=e210]: Fast scenario recall
+        - generic [ref=e211]:
+          - article [ref=e212]:
+            - img "Alert icon" [ref=e213]
+            - generic [ref=e214]:
+              - strong [ref=e215]: Report hazards early
+              - paragraph [ref=e216]: Spot danger before it turns into an accident.
+          - article [ref=e217]:
+            - img "Exit icon" [ref=e218]
+            - generic [ref=e219]:
+              - strong [ref=e220]: Evacuate correctly
+              - paragraph [ref=e221]: Choose people-first actions in emergency scenes.
+      - navigation "Bottom navigation preview" [ref=e222]:
+        - button "◉ Mission" [ref=e223] [cursor=pointer]:
+          - generic [ref=e224]: ◉
+          - generic [ref=e225]: Mission
+        - button "⌂ Home" [ref=e226] [cursor=pointer]:
+          - generic [ref=e227]: ⌂
+          - generic [ref=e228]: Home
+        - button "☺ Profile" [ref=e229] [cursor=pointer]:
+          - generic [ref=e230]: ☺
+          - generic [ref=e231]: Profile
+        - button "⚙ Settings" [ref=e232] [cursor=pointer]:
+          - generic [ref=e233]: ⚙
+          - generic [ref=e234]: Settings
+    - dialog "Settings panel" [ref=e236]:
+      - paragraph [ref=e237]: Settings
+      - heading "Offline controls" [level=2] [ref=e238]
+      - paragraph [ref=e239]: "This build stays lightweight: no accounts, no internet, and no fancy badge server hiding in the ceiling tiles."
+      - generic [ref=e240]:
+        - generic [ref=e241]:
+          - generic [ref=e242]: Saved state
+          - strong [ref=e243]: Empty
+        - generic [ref=e244]:
+          - generic [ref=e245]: Mission progress
+          - strong [ref=e246]: 0/6
+      - generic [ref=e247]:
+        - button "Close" [ref=e248] [cursor=pointer]
+        - button "Home" [ref=e249] [cursor=pointer]
+        - button "Clear saved progress" [ref=e250] [cursor=pointer]

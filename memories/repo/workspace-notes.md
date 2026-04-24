@@ -1,0 +1,22 @@
+- App is a .NET MAUI host with all visible UI in WebView.
+- Web assets live in `wwwroot/` and are packaged via `MauiAsset Include="wwwroot\\**\\*"`.
+- Main entry is `MainPage.xaml` with `WebView Source="wwwroot/index.html"`.
+- Verified build command on Windows: `dotnet build .\\Hazeyelert.csproj -f net10.0-windows10.0.19041.0`.
+- Placeholder SVG scene/icon assets are under `wwwroot/assets/` and should be replaced by final reference images when available.
+- UI now uses an app-style shell in the web layer with animated entry, floating hero/scene motion, and animated feedback states.
+- If Windows build fails with file-lock errors on `Hazeyelert.exe`, stop the running `Hazeyelert` process and rebuild.
+- Current repo still does not contain the promised reference screenshots/photos; only placeholder/local SVG assets plus default MAUI resources are present.
+- Quiz screens now use a more mockup-like layered composition with the story card overlapping the scene and JS-driven screen transitions between states.
+- Web layer now stores lightweight offline mission progress in local storage so the home dashboard can resume in-progress runs or review the last completed result.
+- Verified runtime smoke test: `dotnet run --project .\\Hazeyelert.csproj -f net10.0-windows10.0.19041.0 --no-build` launched without immediate errors in terminal output.
+- Result screen now uses answer-history tracking to build chapter recap cards with status labels, progress meters, and an overall recommendation banner.
+- Quiz screens include a small theme-aware lesson bar (`spill`, `electrical`, `fire`, `noise`) for stronger chapter identity.
+- Bottom navigation is now interactive: `Home` returns to the dashboard, `Mission` starts/resumes/views current mission state, `Profile` opens a learner snapshot overlay, and `Settings` opens an offline control panel.
+- Same-screen renders now update instantly without full screen-swap transitions; full transitions are reserved for actual screen changes.
+- Node-based UI validation is now required before Windows compilation: `Hazeyelert.csproj` runs `npm run verify:ui` through the `VerifyUiContentWithPlaywright` target.
+- Verified Playwright checker workflow: `npm install` succeeds, `npm run verify:ui` passes, and filtered build logs show the Playwright validation step before `dotnet build`.
+- The Playwright checker uses local Chrome/Edge discovery, serves `wwwroot/` over a temporary local HTTP server, and should ignore `/favicon.ico` so browser console noise does not fail the check.
+- Visual system has been refreshed toward a flatter, sleeker app look: darker shell surfaces, lighter content cards, stronger yellow/blue contrast, and less glass-heavy styling.
+- `Hazeyelert.csproj` now excludes `node_modules\**\*` from default MSBuild items so Playwright stays available for validation without polluting MAUI compile inputs or bundled assets.
+- Shared spacing bugs can come from browser-default paragraph margins in the web layer; keep `p` margins reset in `wwwroot/styles.css` and use shared card/chip spacing rules instead of per-screen ad hoc spacing.
+- Header works best as a compact brand row with a single current-page chip; avoid long descriptive copy in the sticky top bar because it makes the shell feel crowded on mobile.

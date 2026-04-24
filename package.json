@@ -1,0 +1,11 @@
+{
+  "name": "hazeyelert",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:ui": "node ./scripts/check-ui-content.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.54.2"
+  }
+}

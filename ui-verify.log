@@ -1,0 +1,5 @@
+
+> verify:ui
+> node ./scripts/check-ui-content.mjs
+
+[ui-check] Playwright UI content verification passed.

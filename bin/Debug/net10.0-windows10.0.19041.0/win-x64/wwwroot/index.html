@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f1218" />
+    <title>Hazeyelert</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo-eye.svg" />
+    <link rel="shortcut icon" href="assets/logo-eye.svg" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="hazard-backdrop" aria-hidden="true">
+        <span class="backdrop-glow backdrop-glow-a"></span>
+        <span class="backdrop-glow backdrop-glow-b"></span>
+        <span class="backdrop-grid"></span>
+    </div>
+
+    <div id="app-shell" class="app-shell" data-view="intro">
+        <header class="app-header">
+            <div class="header-shell card-surface">
+                <div class="header-bar" aria-label="Hazeyelert app header">
+                    <div class="header-brand-row">
+                        <div class="brand-block" aria-label="Hazeyelert app title">
+                            <img src="assets/logo-eye.svg" alt="" class="brand-logo" />
+                            <strong>Hazeyelert</strong>
+                        </div>
+                        <small id="header-context-kicker" class="header-context-chip">Dashboard</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="main-content" tabindex="-1"></main>
+
+        <nav class="bottom-nav card-surface" aria-label="Primary navigation">
+            <button type="button" class="nav-button nav-item" data-nav="mission" data-label="Mission">
+                <span class="nav-icon-wrap" aria-hidden="true">
+                    <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.75 6.25 8.75 4l6.5 2.5L20.25 4v13.75l-5 2.25-6.5-2.5-5 2.25V6.25Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.75 4v13.5M15.25 6.5V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Mission</span>
+            </button>
+            <button type="button" class="nav-button nav-item" data-nav="home" data-label="Home">
+                <span class="nav-icon-wrap" aria-hidden="true">
+                    <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 10.25 12 4.5l7.5 5.75V19a.75.75 0 0 1-.75.75h-4.5v-5h-4.5v5h-4.5A.75.75 0 0 1 4.5 19v-8.75Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Home</span>
+            </button>
+            <button type="button" class="nav-button nav-item" data-nav="profile" data-label="Profile">
+                <span class="nav-icon-wrap" aria-hidden="true">
+                    <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3.75" y="5.25" width="16.5" height="13.5" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="9" cy="11" r="2.25" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M5.75 16c.9-1.95 2.4-2.95 4.5-2.95S13.85 14.05 14.75 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M15.75 10h2.75M15.75 13h2.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Profile</span>
+            </button>
+            <button type="button" class="nav-button nav-item" data-nav="settings" data-label="Settings">
+                <span class="nav-icon-wrap" aria-hidden="true">
+                    <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m12 3.75 1.15 1.95a6.98 6.98 0 0 1 1.76.73l2.18-.62 1.9 3.3-1.52 1.67c.08.4.13.81.13 1.22 0 .41-.05.82-.13 1.22l1.52 1.67-1.9 3.3-2.18-.62c-.55.31-1.14.55-1.76.73L12 20.25l-1.15-1.95a6.98 6.98 0 0 1-1.76-.73l-2.18.62-1.9-3.3 1.52-1.67A6.7 6.7 0 0 1 6.4 12c0-.41.05-.82.13-1.22L5.01 9.11l1.9-3.3 2.18.62c.55-.31 1.14-.55 1.76-.73L12 3.75Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                </span>
+                <span class="nav-label">Settings</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

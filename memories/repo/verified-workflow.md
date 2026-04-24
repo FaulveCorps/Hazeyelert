@@ -1,0 +1,4 @@
+- Root `Hazeyelert` app is a .NET MAUI host that renders the real UI from `wwwroot/index.html` in a `WebView`.
+- Main validation commands: `npm run verify:ui` and `dotnet build -f net10.0-windows10.0.19041.0`.
+- `Hazeyelert.csproj` runs the Playwright-based `verify:ui` check automatically before Windows builds.
+- Current UI verification covers intro, home, mission/profile/settings screens, full quiz completion, and reload/resume during the Chapter 3 multi-select step.

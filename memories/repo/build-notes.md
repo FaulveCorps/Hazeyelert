@@ -1,0 +1,4 @@
+- Root app build: `dotnet build Hazeyelert.csproj -f net10.0-windows10.0.19041.0`
+- UI smoke check: `npm run verify:ui`
+- `Hazeyelert.csproj` must exclude `EcoWay\**\*` from default items so the nested reference app is not compiled with the root app.
+- Primary UI lives in `wwwroot/index.html`, `wwwroot/app.js`, and `wwwroot/styles.css`; MAUI host is only a WebView container.
