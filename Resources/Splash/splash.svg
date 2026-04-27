@@ -1,25 +1,21 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="goldBody" x1="82" y1="168" x2="430" y2="344" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#F2B900" />
-            <stop offset="0.48" stop-color="#FFD447" />
-            <stop offset="1" stop-color="#D49A00" />
+        <linearGradient id="goldBody" x1="110" y1="168" x2="412" y2="346" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFF2A0" />
+            <stop offset="0.44" stop-color="#FFD74A" />
+            <stop offset="1" stop-color="#D69400" />
         </linearGradient>
-        <linearGradient id="goldShine" x1="118" y1="196" x2="394" y2="308" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#FFE784" stop-opacity="0.9" />
-            <stop offset="1" stop-color="#FFF1B0" stop-opacity="0.18" />
+        <linearGradient id="goldDeep" x1="126" y1="154" x2="396" y2="382" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F3B200" />
+            <stop offset="1" stop-color="#9C5800" />
         </linearGradient>
-        <linearGradient id="goldDeep" x1="145" y1="146" x2="372" y2="374" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#E9AE00" />
-            <stop offset="1" stop-color="#B97C00" />
-        </linearGradient>
-        <linearGradient id="signal" x1="214" y1="208" x2="306" y2="298" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#FFF4C7" />
-            <stop offset="1" stop-color="#F2D66A" />
+        <linearGradient id="innerGlow" x1="190" y1="192" x2="322" y2="322" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFFCE7" />
+            <stop offset="1" stop-color="#FFE8A0" />
         </linearGradient>
     </defs>
 
-    <g fill="none" stroke="url(#goldBody)" stroke-linecap="round" opacity="0.95">
+    <g fill="none" stroke="#FFD548" stroke-linecap="round" opacity="0.98">
         <path d="M154 112C186 82 221 66 256 66C291 66 326 82 358 112" stroke-width="16"/>
         <path d="M104 158C137 126 170 110 203 104" stroke-width="12"/>
         <path d="M408 158C375 126 342 110 309 104" stroke-width="12"/>
@@ -28,22 +24,23 @@
         <path d="M408 354C375 386 342 402 309 408" stroke-width="12"/>
     </g>
 
-    <path d="M48 256C110 179 180 141 256 141C332 141 402 179 464 256C402 333 332 371 256 371C180 371 110 333 48 256Z" fill="url(#goldDeep)"/>
-    <path d="M48 256C111 198 183 171 256 171C329 171 401 198 464 256C401 314 329 341 256 341C183 341 111 314 48 256Z" fill="url(#goldBody)"/>
-    <path d="M83 256C132 212 190 190 256 190C322 190 380 212 429 256C380 245 322 240 256 240C190 240 132 245 83 256Z" fill="url(#goldShine)" opacity="0.8"/>
-    <path d="M83 256C132 267 190 272 256 272C322 272 380 267 429 256C380 300 322 322 256 322C190 322 132 300 83 256Z" fill="#E0A700" opacity="0.78"/>
+    <path d="M48 256C110 179 180 141 256 141C332 141 402 179 464 256C402 333 332 371 256 371C180 371 110 333 48 256Z" fill="#8F5106"/>
+    <path d="M60 256C116 198 185 171 256 171C327 171 396 198 452 256C396 314 327 341 256 341C185 341 116 314 60 256Z" fill="url(#goldDeep)"/>
+    <path d="M86 256C134 214 191 193 256 193C321 193 378 214 426 256C378 246 321 241 256 241C191 241 134 246 86 256Z" fill="#FFF0A8" opacity="0.8"/>
+    <path d="M86 256C134 267 191 272 256 272C321 272 378 267 426 256C378 298 321 319 256 319C191 319 134 298 86 256Z" fill="url(#goldBody)" opacity="0.9"/>
 
-    <path d="M98 255C147 199 197 171 256 171C315 171 365 199 414 255" stroke="#FFEB9A" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
-    <path d="M98 257C147 311 197 339 256 339C315 339 365 311 414 257" stroke="#C98500" stroke-width="10" stroke-linecap="round" opacity="0.38"/>
+    <path d="M96 255C145 199 197 171 256 171C315 171 367 199 416 255" stroke="#FFF2AF" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
+    <path d="M96 257C145 311 197 339 256 339C315 339 367 311 416 257" stroke="#864705" stroke-width="10" stroke-linecap="round" opacity="0.38"/>
 
     <circle cx="256" cy="256" r="86" fill="#FFFFFF"/>
-    <circle cx="256" cy="256" r="63" fill="#FFF8DA" opacity="0.58"/>
+    <circle cx="256" cy="256" r="60" fill="url(#innerGlow)" opacity="0.96"/>
+    <circle cx="256" cy="256" r="86" stroke="#D08E00" stroke-width="8"/>
 
-    <path d="M228 210L287 217C297 218 305 227 304 237L298 290C297 301 287 309 276 308L214 302C204 301 196 292 197 282L204 229C205 218 216 209 228 210Z" fill="none" stroke="url(#signal)" stroke-width="12" stroke-linejoin="round" transform="rotate(6 256 256)"/>
-    <path d="M289 224V283" stroke="#F6DE83" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
-    <circle cx="289" cy="206" r="8" fill="#FFF3BE"/>
+    <path d="M228 210L287 217C297 218 305 227 304 237L298 290C297 301 287 309 276 308L214 302C204 301 196 292 197 282L204 229C205 218 216 209 228 210Z" fill="none" stroke="#F3D56B" stroke-width="12" stroke-linejoin="round" transform="rotate(6 256 256)"/>
+    <path d="M289 224V283" stroke="#F5D760" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="289" cy="206" r="8" fill="#FFF1AE"/>
 
-    <g stroke="#E7C24D" stroke-width="8" stroke-linecap="round" opacity="0.88">
+    <g stroke="#E7C24D" stroke-width="8" stroke-linecap="round" opacity="0.9">
         <path d="M256 158V142"/>
         <path d="M219 166L212 151"/>
         <path d="M293 166L300 151"/>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hazeyelert")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a167fcc30b52a3ab877f94d0995f01ea9e9f28ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+482bbb4e34c04fd4e41cc9084f094cf55120420d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hazeyelert")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hazeyelert")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

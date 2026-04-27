@@ -9,6 +9,16 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const webRoot = path.join(projectRoot, "wwwroot");
 
+const petAssetAliases = new Map([
+    ["/assets/pets/cashmier.png", path.join(projectRoot, "Pets", "Cashmier .png")],
+    ["/assets/pets/dio.png", path.join(projectRoot, "Pets", "Dio.png")],
+    ["/assets/pets/donny.png", path.join(projectRoot, "Pets", "Donny .png")],
+    ["/assets/pets/dylan.png", path.join(projectRoot, "Pets", "Dylan.png")],
+    ["/assets/pets/jackie.png", path.join(projectRoot, "Pets", "Jackie.png")],
+    ["/assets/pets/kiara.png", path.join(projectRoot, "Pets", "Kiara.png")],
+    ["/assets/pets/kitty.png", path.join(projectRoot, "Pets", "Kitty.png")]
+]);
+
 const mimeTypes = {
     ".html": "text/html; charset=utf-8",
     ".css": "text/css; charset=utf-8",
@@ -49,6 +59,13 @@ async function findBrowserExecutable() {
 }
 
 async function resolveRequestFile(requestPath) {
+    const aliasedPetPath = petAssetAliases.get(requestPath);
+
+    if (aliasedPetPath) {
+        const petStats = await stat(aliasedPetPath).catch(() => null);
+        return petStats ? aliasedPetPath : null;
+    }
+
     const normalizedRequest = requestPath === "/" ? "/index.html" : requestPath;
     const unsafePath = path.normalize(path.join(webRoot, decodeURIComponent(normalizedRequest)));
 

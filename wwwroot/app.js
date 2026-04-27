@@ -7,6 +7,8 @@ const quizSteps = [
         question: "Which clue caused the fall?",
         story: "You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.",
         guide: "Your vision scans the room. Focus on the clue that actually caused the fall.",
+        petPrompt: "Woof! Tama ba 'to gawin? Tap the clue that really caused the fall.",
+        guidePetId: "kitty",
         sceneTheme: "spill",
         image: "assets/scene-spill.svg",
         choiceLayout: "stacked",
@@ -44,6 +46,8 @@ const quizSteps = [
         question: "Which order is safest?",
         story: "You push yourself up, grab your charger, and reach for the outlet. Your phone is still dead, you are still in a hurry, and something feels off — but you move anyway. Then the shock hits. A sharp zap stings your fingers, and only after pulling back do you notice the exposed wire you missed.",
         guide: "Your brain wants to rush. The safer order is dry hands first, check the wire next, and plug it in last.",
+        petPrompt: "Woof! Tama ba 'to gawin? Pick the order that checks the charger before you plug it in.",
+        guidePetId: "dio",
         sceneTheme: "wire",
         image: "assets/scene-electrical.svg",
         choiceLayout: "stacked",
@@ -81,6 +85,8 @@ const quizSteps = [
         question: "What should you do first?",
         story: "You step outside hoping the fresh air helps. Instead, a construction drill tears through the air. It is too much. Your head instantly aches, your shoulders tense, and everything feels louder than it should.",
         guide: "Your body reacts before your mind here. Protect yourself from the noise first.",
+        petPrompt: "Woof! Tama ba 'to gawin? Choose the first move that protects you from the noise.",
+        guidePetId: "dylan",
         sceneTheme: "noise",
         image: "assets/scene-noise.svg",
         choiceLayout: "stacked",
@@ -118,6 +124,8 @@ const quizSteps = [
         question: "Which actions actually help you stay safe?",
         story: "Your elbow hurts. Your fingers still feel weird. Your head is pounding, and it is not even mid-morning yet. It feels like bad luck, but maybe it is really a test of how aware you are. The next choices decide whether things get worse or better.",
         guide: "Reset the day by choosing only the actions that actually lower risk.",
+        petPrompt: "Woof! Think first. Tap only the actions that really make the morning safer.",
+        guidePetId: "donny",
         sceneTheme: "spill",
         image: "assets/scene-spill.svg",
         selectionMode: "multi",
@@ -158,6 +166,8 @@ const quizSteps = [
         question: "Which response is safest in smoke?",
         story: "You wake up inside your condo unit and smoke fills the air. Your throat burns immediately. Your parents are far away at a store, and you are alone. Smoke slips under the door, a crackling sound spreads through the building, and heat starts rising fast.",
         guide: "In smoke, the safer image is the one that keeps you low and moving carefully.",
+        petPrompt: "Woof! Click the right decision to escape the fire more safely.",
+        guidePetId: "kiara",
         sceneTheme: "fire",
         image: "assets/scene-fire.svg",
         choiceLayout: "visual",
@@ -195,6 +205,8 @@ const quizSteps = [
         question: "Which risk match is safest?",
         story: "You move into the hallway and smoke is everywhere. Then a loud thud hits from above. Something falls. Then another. The building shakes slightly. Escape is getting harder, and now falling objects are part of the danger too.",
         guide: "Read the hallway fast: open space is more exposed, walls are safer, and ceiling cracks are a direct danger sign.",
+        petPrompt: "Woof! Tama ba 'to gawin? Pick the hallway choice that keeps you away from the worst danger.",
+        guidePetId: "jackie",
         sceneTheme: "fire",
         image: "assets/scene-fire.svg",
         choiceLayout: "visual",
@@ -232,6 +244,8 @@ const quizSteps = [
         question: "Which order keeps you safest?",
         story: "Fire spreads deeper inside the building. The air feels heavy, warm, and wrong beyond just smoke. Escape paths are getting blocked, pressure is building, and this is the moment when calm order matters more than panic speed.",
         guide: "Assess briefly, move toward safer air or an exit route, and never panic-run into danger.",
+        petPrompt: "Woof! Choose the right decision order before panic takes over.",
+        guidePetId: "cashmier",
         sceneTheme: "fire",
         image: "assets/scene-fire.svg",
         choiceLayout: "visual",
@@ -317,6 +331,58 @@ const profileBadges = [
     {
         title: "Night survivor",
         copy: "You stay calm when fire, smoke, and falling hazards collide."
+    }
+];
+
+const petCompanions = [
+    {
+        id: "cashmier",
+        name: "Cashmier",
+        role: "Calm lookout",
+        image: "assets/pets/cashmier.png",
+        copy: "Helps you slow down and scan the scene before the rush takes over."
+    },
+    {
+        id: "dio",
+        name: "Dio",
+        role: "Cord checker",
+        image: "assets/pets/dio.png",
+        copy: "Reminds you to inspect chargers, wires, and anything that sparks risk."
+    },
+    {
+        id: "donny",
+        name: "Donny",
+        role: "Reset buddy",
+        image: "assets/pets/donny.png",
+        copy: "Keeps chaotic mornings from snowballing into avoidable hazards."
+    },
+    {
+        id: "dylan",
+        name: "Dylan",
+        role: "Noise scout",
+        image: "assets/pets/dylan.png",
+        copy: "Watches for sudden sound blasts and reminds you to protect yourself first."
+    },
+    {
+        id: "jackie",
+        name: "Jackie",
+        role: "Path watcher",
+        image: "assets/pets/jackie.png",
+        copy: "Keeps hallways, exits, and shared routes clear before anyone moves through them."
+    },
+    {
+        id: "kiara",
+        name: "Kiara",
+        role: "Exit guide",
+        image: "assets/pets/kiara.png",
+        copy: "Points you toward cleaner air, safer space, and the next smart move."
+    },
+    {
+        id: "kitty",
+        name: "Kitty",
+        role: "Balance guard",
+        image: "assets/pets/kitty.png",
+        copy: "Flags underfoot clutter before one bad step turns into a fall."
     }
 ];
 
@@ -1311,6 +1377,71 @@ function getMissionPrefab(step) {
     };
 }
 
+function getPetCompanionForStep(step) {
+    if (!petCompanions.length) {
+        return null;
+    }
+
+    const explicitPet = petCompanions.find((pet) => pet.id === step?.guidePetId);
+    if (explicitPet) {
+        return explicitPet;
+    }
+
+    const stepIndex = quizSteps.findIndex((entry) => entry.id === step?.id);
+    return petCompanions[(stepIndex >= 0 ? stepIndex : 0) % petCompanions.length] ?? petCompanions[0];
+}
+
+function getPetGuideState(step, feedback) {
+    const pet = getPetCompanionsFallback(step);
+
+    if (feedback?.isCorrect) {
+        return {
+            pet,
+            eyebrow: pet.role,
+            heading: `Woof! ${pet.name} says that is the safer call.`,
+            copy: step?.successBadge?.copy ?? feedback.copy
+        };
+    }
+
+    if (feedback) {
+        return {
+            pet,
+            eyebrow: pet.role,
+            heading: `Woof! ${pet.name} says think again.`,
+            copy: `${step?.failureBadge?.copy ?? feedback.copy} ${step?.guide ?? ""}`.trim()
+        };
+    }
+
+    return {
+        pet,
+        eyebrow: pet.role,
+        heading: "Woof! Tama ba 'to gawin?",
+        copy: step?.petPrompt ?? `${step?.question ?? pet.copy} ${step?.answerModeLabel ?? ""}`.trim()
+    };
+}
+
+function getPetCompanionsFallback(step) {
+    return getPetCompanionForStep(step) ?? {
+        name: "Mascot guide",
+        role: "Safety guide",
+        image: "assets/pet-guide.svg",
+        copy: step?.guide ?? "Stay alert and keep the route safe."
+    };
+}
+
+function renderPetRoster(activePetId) {
+    return petCompanions.map((pet) => `
+        <article class="mini-panel compact-panel pet-roster-card ${pet.id === activePetId ? "pet-roster-card-active" : ""}">
+            <div class="pet-roster-visual">
+                <img src="${pet.image}" alt="${pet.name}" onerror="this.onerror=null;this.src='assets/pet-guide.svg';" />
+            </div>
+            <strong>${pet.name}</strong>
+            <small>${pet.role}</small>
+            <p>${pet.copy}</p>
+        </article>
+    `).join("");
+}
+
 function renderMissionPrefabMarkers(markers = []) {
     return markers.map((marker, index) => `
         <span
@@ -1546,6 +1677,8 @@ function getScenarioLead(step) {
             return "Protect yourself from the blast of sound before you do anything else.";
         case "fire":
             return "Smoke changes the room fast, so the first calm move matters most.";
+        case "pets":
+            return "Even calm pets can turn a hallway into a trip zone when the path is crowded.";
         case "spill":
         default:
             return "Scan the scene first and lock onto the hazard before you move.";
@@ -1966,6 +2099,7 @@ function renderProfile() {
     const chapters = getChapterSummaries();
     const answeredTotal = Object.keys(state.answerHistory).length;
     const completionRate = answeredTotal === 0 ? 0 : Math.round((state.score / answeredTotal) * 100);
+    const activePet = getPetCompanionForStep(getCurrentStep());
 
     return `
         <section class="screen-stack profile-screen">
@@ -2017,6 +2151,16 @@ function renderProfile() {
                             <p>${badge.copy}</p>
                         </article>
                     `).join("")}
+                </div>
+            </section>
+
+            <section class="card-surface achievement-card pet-roster-panel">
+                <div class="section-heading-row compact-row">
+                    <h2>Pet guide crew</h2>
+                    <span class="eyebrow-pill subtle-pill">${activePet?.name ?? "Guide roster"}</span>
+                </div>
+                <div class="pet-roster-grid">
+                    ${renderPetRoster(activePet?.id)}
                 </div>
             </section>
         </section>
@@ -2092,6 +2236,7 @@ function renderOptions(step) {
 function renderQuiz() {
     const step = getCurrentStep();
     const feedback = state.answered ? getFeedback(step) : null;
+    const petGuide = getPetGuideState(step, feedback);
     const multiSelectSummary = getMultiSelectSummary(step);
     const layout = getChoiceLayout(step);
     const requiredSelections = getCorrectOptionIds(step).length;
@@ -2143,9 +2288,22 @@ function renderQuiz() {
                     </div>
                 </section>
 
-                <section class="mission-scene-details story-card guide-panel">
+                <section class="mission-scene-details story-card">
                     <div class="mission-scene-details-copy">
                         <p>${step.story}</p>
+                    </div>
+                </section>
+
+                <section class="mission-guide-panel guide-panel">
+                    <div class="guide-copy">
+                        <span class="eyebrow-pill subtle-pill">${petGuide.eyebrow}</span>
+                        <h2>${petGuide.heading}</h2>
+                        <p>${petGuide.copy}</p>
+                    </div>
+                    <div class="guide-visual-wrap guide-visual-compact">
+                        <img src="assets/pet-guide.svg" alt="" aria-hidden="true" />
+                        <img src="${petGuide.pet.image}" alt="${petGuide.pet.name}" class="guide-mascot" onerror="this.onerror=null;this.src='assets/pet-guide.svg';" />
+                        <span class="guide-nameplate">${petGuide.pet.name} · ${petGuide.pet.role}</span>
                     </div>
                 </section>
 

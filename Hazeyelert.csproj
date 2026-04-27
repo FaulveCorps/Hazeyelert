@@ -75,6 +75,13 @@
 	<ItemGroup>
 		<!-- Web UI packaged for the local WebView -->
 		<MauiAsset Include="wwwroot\**\*" LogicalName="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiAsset Include="Pets\Cashmier .png" LogicalName="wwwroot\assets\pets\cashmier.png" />
+		<MauiAsset Include="Pets\Dio.png" LogicalName="wwwroot\assets\pets\dio.png" />
+		<MauiAsset Include="Pets\Donny .png" LogicalName="wwwroot\assets\pets\donny.png" />
+		<MauiAsset Include="Pets\Dylan.png" LogicalName="wwwroot\assets\pets\dylan.png" />
+		<MauiAsset Include="Pets\Jackie.png" LogicalName="wwwroot\assets\pets\jackie.png" />
+		<MauiAsset Include="Pets\Kiara.png" LogicalName="wwwroot\assets\pets\kiara.png" />
+		<MauiAsset Include="Pets\Kitty.png" LogicalName="wwwroot\assets\pets\kitty.png" />
 	</ItemGroup>
 
 	<ItemGroup>

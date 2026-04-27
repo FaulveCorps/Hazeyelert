@@ -24,6 +24,8 @@
     --radius-sm: 14px;
     --shell-width: min(100vw - 32px, 430px);
     --screen-gutter: 6px;
+    --bottom-nav-offset: calc(16px + env(safe-area-inset-bottom));
+    --bottom-nav-shell-reserve: calc(138px + env(safe-area-inset-bottom));
     --motion-spring-pop: cubic-bezier(0.22, 1.18, 0.28, 1);
     --motion-spring-soft: cubic-bezier(0.2, 0.82, 0.2, 1);
     --motion-smooth: cubic-bezier(0.22, 0.61, 0.24, 1);
@@ -74,8 +76,8 @@ body {
     overflow: hidden;
     isolation: isolate;
     background:
-        radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.14), transparent 26%),
-        linear-gradient(180deg, #ff9d2e 0%, var(--splash-orange) 42%, var(--splash-orange-deep) 100%);
+        radial-gradient(circle at 50% 18%, rgba(255, 245, 214, 0.24), transparent 28%),
+        linear-gradient(180deg, #ffb14a 0%, #f97316 36%, #db5e12 72%, #a73f0d 100%);
     transition:
         opacity 540ms ease,
         visibility 0s linear 540ms;
@@ -124,11 +126,19 @@ body {
 .startup-splash-inner {
     position: relative;
     z-index: 1;
-    width: min(96vw, 1200px);
+    width: min(90vw, 560px);
     display: grid;
     justify-items: center;
-    gap: 18px;
-    padding: 24px;
+    gap: 20px;
+    padding: 30px 24px 26px;
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(130, 49, 7, 0.16), rgba(86, 30, 5, 0.08));
+    border: 1px solid rgba(255, 239, 204, 0.16);
+    box-shadow:
+        0 26px 48px rgba(90, 31, 3, 0.22),
+        inset 0 1px 0 rgba(255, 247, 230, 0.16);
+    backdrop-filter: blur(10px);
     animation: startupSplashRise 760ms var(--motion-spring-pop) both;
     transition:
         opacity 320ms ease,
@@ -137,30 +147,35 @@ body {
 }
 
 .startup-splash-brand {
-    width: min(94vw, 1180px);
+    width: min(78vw, 420px);
     height: auto;
     display: block;
-    filter: drop-shadow(0 18px 34px rgba(89, 32, 3, 0.28));
+    filter: drop-shadow(0 22px 34px rgba(89, 32, 3, 0.3));
 }
 
 .startup-splash-copy {
-    color: rgba(255, 247, 236, 0.96);
-    font-size: clamp(0.92rem, 1.8vw, 1.05rem);
-    font-weight: 700;
-    letter-spacing: 0.22em;
+    color: rgba(255, 249, 239, 1);
+    font-size: clamp(0.92rem, 2vw, 1.04rem);
+    font-weight: 800;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 10px 22px rgba(90, 31, 3, 0.22);
+    text-shadow: 0 12px 26px rgba(90, 31, 3, 0.26);
 }
 
 @media (max-width: 720px) {
     .startup-splash-inner {
-        gap: 14px;
-        padding-inline: 16px;
+        width: min(90vw, 470px);
+        gap: 16px;
+        padding: 24px 18px 22px;
+    }
+
+    .startup-splash-brand {
+        width: min(80vw, 360px);
     }
 
     .startup-splash-copy {
-        letter-spacing: 0.16em;
+        letter-spacing: 0.14em;
     }
 }
 
@@ -271,7 +286,7 @@ h3 {
     min-height: 100vh;
     position: relative;
     z-index: 1;
-    padding: 20px 0 calc(120px + env(safe-area-inset-bottom));
+    padding: 20px 0 var(--bottom-nav-shell-reserve);
 }
 
 .app-shell.immersive-view {
@@ -927,6 +942,13 @@ h3 {
         rgba(255, 255, 255, 0.03);
 }
 
+.scene-pets,
+.theme-pets {
+    background:
+        radial-gradient(circle at top, rgba(255, 176, 104, 0.28), transparent 45%),
+        rgba(255, 255, 255, 0.03);
+}
+
 .section-block {
     display: flex;
     flex-direction: column;
@@ -1022,6 +1044,49 @@ h3 {
     gap: 10px;
 }
 
+.pet-roster-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.pet-roster-card {
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.pet-roster-card-active {
+    border: 1px solid rgba(255, 209, 74, 0.26);
+    background:
+        radial-gradient(circle at top right, rgba(255, 209, 74, 0.14), transparent 42%),
+        rgba(255, 255, 255, 0.05);
+}
+
+.pet-roster-visual {
+    width: 100%;
+    min-height: 132px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at top, rgba(255, 217, 122, 0.16), transparent 42%),
+        linear-gradient(180deg, rgba(31, 37, 51, 0.98), rgba(17, 21, 30, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.pet-roster-visual img {
+    width: min(100%, 124px);
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.pet-roster-card small {
+    color: rgba(255, 243, 211, 0.76);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
 .settings-summary-card {
     min-height: 100%;
     gap: 10px;
@@ -1085,6 +1150,12 @@ h3 {
 .chapter-card.theme-wire {
     background:
         linear-gradient(180deg, rgba(30, 25, 16, 0.92), rgba(15, 19, 29, 0.96)),
+        rgba(255, 255, 255, 0.03);
+}
+
+.chapter-card.theme-pets {
+    background:
+        linear-gradient(180deg, rgba(54, 29, 18, 0.94), rgba(19, 21, 31, 0.96)),
         rgba(255, 255, 255, 0.03);
 }
 
@@ -1190,6 +1261,12 @@ h3 {
     --mission-accent-border: rgba(204, 101, 56, 0.22);
 }
 
+.mission-tone-pets {
+    --mission-accent: #d98743;
+    --mission-accent-soft: rgba(217, 135, 67, 0.14);
+    --mission-accent-border: rgba(217, 135, 67, 0.22);
+}
+
 .mission-level-overview {
     display: contents;
 }
@@ -1199,6 +1276,12 @@ h3 {
     min-height: clamp(320px, 48vh, 430px);
     overflow: hidden;
     background: linear-gradient(180deg, #edf2f7 0%, #d8dde5 100%);
+}
+
+.mission-tone-pets .mission-stage-card {
+    background:
+        radial-gradient(circle at top, rgba(255, 196, 104, 0.24), transparent 44%),
+        linear-gradient(180deg, #473028 0%, #231d25 100%);
 }
 
 .mission-stage-image-wrap {
@@ -1213,6 +1296,12 @@ h3 {
     display: block;
     object-fit: cover;
     object-position: center;
+}
+
+.mission-tone-pets .mission-stage-image {
+    object-fit: contain;
+    object-position: center bottom;
+    padding: 22px 20px 0;
 }
 
 .mission-stage-image-wrap::after {
@@ -1622,6 +1711,12 @@ h3 {
         linear-gradient(180deg, rgba(76, 40, 24, 0.98) 0%, rgba(36, 18, 16, 0.97) 48%, rgba(22, 16, 19, 0.98) 100%);
 }
 
+.mission-scene-card.theme-pets {
+    background:
+        radial-gradient(circle at top left, rgba(255, 209, 74, 0.2), transparent 34%),
+        linear-gradient(180deg, rgba(82, 53, 29, 0.98) 0%, rgba(36, 24, 21, 0.97) 54%, rgba(22, 16, 19, 0.98) 100%);
+}
+
 .mission-scene-head {
     display: block;
 }
@@ -1860,6 +1955,10 @@ h3 {
 
 .mission-prefab-card.theme-fire {
     background: linear-gradient(180deg, #ffffff 0%, #f4faef 56%, #edf7e8 100%);
+}
+
+.mission-prefab-card.theme-pets {
+    background: linear-gradient(180deg, #ffffff 0%, #fef6ea 56%, #f6eadb 100%);
 }
 
 .mission-prefab-head,
@@ -2603,6 +2702,26 @@ h3 {
     width: 86px;
 }
 
+.guide-nameplate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 209, 74, 0.14);
+    border: 1px solid rgba(255, 209, 74, 0.18);
+    color: #fff2c4;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.mission-guide-panel .guide-mascot,
+.pet-roster-visual img {
+    object-fit: contain;
+}
+
 .quiz-topbar {
     padding: 18px 4px 0;
 }
@@ -2643,6 +2762,12 @@ h3 {
 .theme-wire {
     background:
         linear-gradient(180deg, rgba(34, 25, 13, 0.98), rgba(14, 18, 27, 0.94)),
+        rgba(255, 255, 255, 0.03);
+}
+
+.theme-pets {
+    background:
+        linear-gradient(180deg, rgba(48, 28, 16, 0.98), rgba(16, 18, 28, 0.94)),
         rgba(255, 255, 255, 0.03);
 }
 
@@ -2835,28 +2960,32 @@ h3 {
 .bottom-nav {
     position: fixed;
     left: 50%;
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    bottom: var(--bottom-nav-offset);
     transform: translateX(-50%);
     width: var(--shell-width);
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
-    padding: 10px;
+    align-items: stretch;
+    padding: 12px 10px 14px;
     border-radius: 24px;
+    overflow: visible;
     z-index: 5;
     backdrop-filter: blur(18px) saturate(1.05);
 }
 
 .nav-button {
-    min-height: 58px;
+    min-height: 64px;
+    padding: 6px 4px 8px;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 5px;
     color: var(--muted);
     position: relative;
+    overflow: visible;
     transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
@@ -2885,6 +3014,8 @@ h3 {
 .nav-label {
     font-size: 0.76rem;
     font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .nav-icon-svg {
@@ -4221,6 +4352,19 @@ h3 {
 
     .mission-guide-panel .guide-mascot {
         width: 46px;
+    }
+
+    .guide-nameplate {
+        font-size: 0.64rem;
+        padding: 5px 8px;
+    }
+
+    .pet-roster-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pet-roster-visual {
+        min-height: 108px;
     }
 
     .quiz-layout-grid .wide-button {

@@ -1,67 +1,60 @@
-<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hazeyelert SNMRO Group startup brand">
+<svg width="900" height="820" viewBox="0 0 900 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hazeyelert SNMRO Group startup brand">
   <defs>
-    <linearGradient id="hazGoldBody" x1="82" y1="168" x2="430" y2="344" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#F2B900" />
-      <stop offset="0.48" stop-color="#FFD447" />
-      <stop offset="1" stop-color="#D49A00" />
+    <linearGradient id="brandGoldBody" x1="208" y1="182" x2="692" y2="478" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF3A8"/>
+      <stop offset="0.42" stop-color="#FFD84D"/>
+      <stop offset="1" stop-color="#D79A00"/>
     </linearGradient>
-    <linearGradient id="hazGoldShine" x1="118" y1="196" x2="394" y2="308" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFE784" stop-opacity="0.94" />
-      <stop offset="1" stop-color="#FFF1B0" stop-opacity="0.16" />
+    <linearGradient id="brandGoldDeep" x1="224" y1="176" x2="676" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4B200"/>
+      <stop offset="1" stop-color="#9F5B00"/>
     </linearGradient>
-    <linearGradient id="hazGoldDeep" x1="145" y1="146" x2="372" y2="374" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#E9AE00" />
-      <stop offset="1" stop-color="#B97C00" />
+    <linearGradient id="brandInnerGlow" x1="332" y1="236" x2="582" y2="444" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFBE1"/>
+      <stop offset="1" stop-color="#FFE8A5"/>
     </linearGradient>
-    <linearGradient id="hazSignal" x1="214" y1="208" x2="306" y2="298" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF4C7" />
-      <stop offset="1" stop-color="#F2D66A" />
-    </linearGradient>
-    <filter id="hazSoftShadow" x="0" y="0" width="1600" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#6A2805" flood-opacity="0.22" />
+    <filter id="brandShadow" x="106" y="82" width="688" height="548" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#73310C" flood-opacity="0.24"/>
     </filter>
   </defs>
 
-  <g filter="url(#hazSoftShadow)">
-    <text x="36" y="218" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="170" font-weight="700" letter-spacing="2">Haz</text>
-
-    <g transform="translate(504 0) scale(0.82)">
-      <g fill="none" stroke="url(#hazGoldBody)" stroke-linecap="round" opacity="0.95">
-        <path d="M154 112C186 82 221 66 256 66C291 66 326 82 358 112" stroke-width="16"/>
-        <path d="M104 158C137 126 170 110 203 104" stroke-width="12"/>
-        <path d="M408 158C375 126 342 110 309 104" stroke-width="12"/>
-        <path d="M154 400C186 430 221 446 256 446C291 446 326 430 358 400" stroke-width="16"/>
-        <path d="M104 354C137 386 170 402 203 408" stroke-width="12"/>
-        <path d="M408 354C375 386 342 402 309 408" stroke-width="12"/>
+  <g filter="url(#brandShadow)">
+    <g transform="translate(150 30)">
+      <g fill="none" stroke="#FFD44A" stroke-linecap="round" opacity="0.98">
+        <path d="M164 126C214 78 270 54 330 54C390 54 446 78 496 126" stroke-width="18"/>
+        <path d="M94 196C144 150 195 126 245 118" stroke-width="14"/>
+        <path d="M566 196C516 150 465 126 415 118" stroke-width="14"/>
+        <path d="M164 534C214 582 270 606 330 606C390 606 446 582 496 534" stroke-width="18"/>
+        <path d="M94 464C144 510 195 534 245 542" stroke-width="14"/>
+        <path d="M566 464C516 510 465 534 415 542" stroke-width="14"/>
       </g>
 
-      <path d="M48 256C110 179 180 141 256 141C332 141 402 179 464 256C402 333 332 371 256 371C180 371 110 333 48 256Z" fill="url(#hazGoldDeep)"/>
-      <path d="M48 256C111 198 183 171 256 171C329 171 401 198 464 256C401 314 329 341 256 341C183 341 111 314 48 256Z" fill="url(#hazGoldBody)"/>
-      <path d="M83 256C132 212 190 190 256 190C322 190 380 212 429 256C380 245 322 240 256 240C190 240 132 245 83 256Z" fill="url(#hazGoldShine)" opacity="0.8"/>
-      <path d="M83 256C132 267 190 272 256 272C322 272 380 267 429 256C380 300 322 322 256 322C190 322 132 300 83 256Z" fill="#E0A700" opacity="0.78"/>
+      <path d="M34 330C117 230 214 182 330 182C446 182 543 230 626 330C543 430 446 478 330 478C214 478 117 430 34 330Z" fill="#8E4F05"/>
+      <path d="M56 330C130 252 223 214 330 214C437 214 530 252 604 330C530 408 437 446 330 446C223 446 130 408 56 330Z" fill="url(#brandGoldDeep)"/>
+      <path d="M82 330C144 274 226 246 330 246C434 246 516 274 578 330C516 314 434 306 330 306C226 306 144 314 82 330Z" fill="#FFF0A6" opacity="0.82"/>
+      <path d="M82 330C144 346 226 354 330 354C434 354 516 346 578 330C516 386 434 414 330 414C226 414 144 386 82 330Z" fill="url(#brandGoldBody)" opacity="0.88"/>
 
-      <path d="M98 255C147 199 197 171 256 171C315 171 365 199 414 255" stroke="#FFEB9A" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
-      <path d="M98 257C147 311 197 339 256 339C315 339 365 311 414 257" stroke="#C98500" stroke-width="10" stroke-linecap="round" opacity="0.38"/>
+      <path d="M70 328C138 252 224 214 330 214C436 214 522 252 590 328" stroke="#FFF2AF" stroke-width="14" stroke-linecap="round" opacity="0.52"/>
+      <path d="M70 332C138 408 224 446 330 446C436 446 522 408 590 332" stroke="#8A4A05" stroke-width="14" stroke-linecap="round" opacity="0.34"/>
 
-      <circle cx="256" cy="256" r="86" fill="#FFFFFF"/>
-      <circle cx="256" cy="256" r="63" fill="#FFF8DA" opacity="0.58"/>
+      <circle cx="330" cy="330" r="114" fill="#FFFFFF"/>
+      <circle cx="330" cy="330" r="80" fill="url(#brandInnerGlow)" opacity="0.94"/>
+      <circle cx="330" cy="330" r="114" stroke="#D08E00" stroke-width="10" opacity="0.9"/>
 
-      <path d="M228 210L287 217C297 218 305 227 304 237L298 290C297 301 287 309 276 308L214 302C204 301 196 292 197 282L204 229C205 218 216 209 228 210Z" fill="none" stroke="url(#hazSignal)" stroke-width="12" stroke-linejoin="round" transform="rotate(6 256 256)"/>
-      <path d="M289 224V283" stroke="#F6DE83" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
-      <circle cx="289" cy="206" r="8" fill="#FFF3BE"/>
+      <path d="M292 268L368 278C381 279 392 290 391 304L383 376C382 390 369 401 355 400L275 393C262 392 251 381 252 367L260 296C261 282 276 267 292 268Z" fill="none" stroke="#F3D56B" stroke-width="16" stroke-linejoin="round" transform="rotate(6 330 330)"/>
+      <path d="M371 286V362" stroke="#F5D760" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="371" cy="262" r="10" fill="#FFF0A6"/>
 
-      <g stroke="#E7C24D" stroke-width="8" stroke-linecap="round" opacity="0.88">
-        <path d="M256 158V142"/>
-        <path d="M219 166L212 151"/>
-        <path d="M293 166L300 151"/>
-        <path d="M192 188L180 177"/>
-        <path d="M320 188L332 177"/>
+      <g stroke="#E7C24D" stroke-width="10" stroke-linecap="round" opacity="0.92">
+        <path d="M330 198V176"/>
+        <path d="M279 210L269 190"/>
+        <path d="M381 210L391 190"/>
+        <path d="M242 238L226 224"/>
+        <path d="M418 238L434 224"/>
       </g>
     </g>
-
-    <text x="930" y="218" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="170" font-weight="700" letter-spacing="2">Lert</text>
-    <text x="940" y="312" fill="#F8FBFF" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="500" letter-spacing="6">SNMRO GROUP</text>
-
-    <path d="M1514 336L1528 350L1542 336L1528 322L1514 336Z" fill="#F3F5F7" opacity="0.72"/>
   </g>
+
+  <text x="450" y="690" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="96" font-weight="800" letter-spacing="0.5">Hazeyelert</text>
+  <text x="450" y="748" text-anchor="middle" fill="#FFF4DA" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="7">SNMRO GROUP</text>
 </svg>

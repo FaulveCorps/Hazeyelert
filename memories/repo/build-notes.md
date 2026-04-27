@@ -1,8 +1,11 @@
 - Root app build: `dotnet build Hazeyelert.csproj -f net10.0-windows10.0.19041.0`
 - Root Android build on this machine: `dotnet build Hazeyelert.csproj -f net10.0-android -c Debug -p:AndroidPackageFormat=apk -p:AndroidSdkDirectory=C:\Users\jpfau\AppData\Local\Android\Sdk`
+- Root Android publish on this machine: `dotnet publish -f net10.0-android -c Debug -p:RunUiContentCheckBeforeBuild=false -p:AndroidSdkDirectory=C:\Users\jpfau\AppData\Local\Android\Sdk -p:AndroidPackageFormats=apk -v:minimal`
 - UI smoke check: `npm run verify:ui`
 - Android SDK note: default resolution may incorrectly point to `C:\Program Files (x86)\Android\android-sdk`; use the explicit `AndroidSdkDirectory` above when building from PowerShell.
 - Verified deploy path: install `bin\Debug\net10.0-android\com.companyname.hazeyelert-Signed.apk` with `adb install -r`, package `com.companyname.hazeyelert`.
+- Verified on device `DQX8MNMFLVKJNBKJ`: incremental `adb install -r` succeeded; `am start -W -n com.companyname.hazeyelert/crc641ddbea3df2ed4201.MainActivity` returned `Status=ok`; `dumpsys` confirmed `MainActivity` resumed/focused with visible process.
 - Startup crash fix on device `CPH2483`: disable Android Fast Deployment for Debug by setting `EmbedAssembliesIntoApk=true` for Android Debug builds. Root cause was native abort `No assemblies found in ... .__override__ ... Assuming this is part of Fast Deployment`.
 - `Hazeyelert.csproj` must exclude `EcoWay\**\*` from default items so the nested reference app is not compiled with the root app.
 - Primary UI lives in `wwwroot/index.html`, `wwwroot/app.js`, and `wwwroot/styles.css`; MAUI host is only a WebView container.
+- Non-`wwwroot` web assets must be exposed with explicit `MauiAsset` logical names under `wwwroot/...`; the Pets mission uses `Pets\*.png` mapped to `wwwroot\assets\pets\*.png`.

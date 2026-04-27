@@ -2690,3 +2690,10 @@ D:\Project\Hazeyelert\obj\Debug\net10.0-android\resizetizer\sp\drawable\maui_spl
 D:\Project\Hazeyelert\obj\Debug\net10.0-android\resizetizer\sp\values\maui_colors.xml
 D:\Project\Hazeyelert\obj\Debug\net10.0-android\resizetizer\2408EEC9E29B4C95-files.cache
 D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\startup-splash-brand.svg
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\cashmier.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\dio.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\donny.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\dylan.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\jackie.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\kiara.png
+D:\Project\Hazeyelert\obj\Debug\net10.0-android\assets\wwwroot\assets\pets\kitty.png
