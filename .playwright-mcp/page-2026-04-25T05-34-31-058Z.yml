@@ -1,0 +1,62 @@
+- main [ref=e10]:
+  - generic [ref=e428]:
+    - generic [ref=e429]:
+      - button "Back" [ref=e430] [cursor=pointer]
+      - generic [ref=e431]:
+        - generic [ref=e432]: Question
+        - strong [ref=e433]: 4 / 7
+    - generic [ref=e434]:
+      - generic [ref=e436]:
+        - img "The Day That Won’t Stay Quiet" [ref=e437]
+        - generic [ref=e438]:
+          - generic [ref=e441]:
+            - generic [ref=e442]: Chapter 1
+            - strong [ref=e443]: Reset the morning
+          - complementary [ref=e444]:
+            - generic [ref=e445]: "!"
+            - generic [ref=e446]:
+              - strong [ref=e447]: Break the bad luck
+              - generic [ref=e448]: Reset route
+              - generic [ref=e449]: Choose only the moves that actually lower the danger around you.
+        - generic [ref=e451]: I need to reset.
+        - paragraph [ref=e453]: The Day That Won’t Stay Quiet
+      - paragraph [ref=e456]: Your elbow hurts. Your fingers still feel weird. Your head is pounding, and it is not even mid-morning yet. It feels like bad luck, but maybe it is really a test of how aware you are. The next choices decide whether things get worse or better.
+      - generic [ref=e457]:
+        - generic [ref=e459]:
+          - paragraph [ref=e460]: Quiz (Choose all safe actions)
+          - heading "Which actions actually help you stay safe?" [level=2] [ref=e461]
+        - generic [ref=e463]:
+          - strong [ref=e464]: Select every safe action
+          - generic [ref=e465]: Choose 3 safe answers.
+        - generic [ref=e466]:
+          - button "👀 Observe Read the space before moving. Slow down and observe your surroundings." [ref=e467] [cursor=pointer]:
+            - generic [ref=e470]: 👀
+            - generic [ref=e471]:
+              - strong [ref=e472]: Observe
+              - generic [ref=e473]: Read the space before moving.
+              - generic [ref=e474]: Slow down and observe your surroundings.
+          - button "🙈 Ignore it This keeps the hazard alive. Ignoring small dangers lets them stack into bigger ones." [ref=e475] [cursor=pointer]:
+            - generic [ref=e478]: 🙈
+            - generic [ref=e479]:
+              - strong [ref=e480]: Ignore it
+              - generic [ref=e481]: This keeps the hazard alive.
+              - generic [ref=e482]: Ignoring small dangers lets them stack into bigger ones.
+          - button "🔎 Check first Inspect before you use. Check things before using them." [ref=e483] [cursor=pointer]:
+            - generic [ref=e486]: 🔎
+            - generic [ref=e487]:
+              - strong [ref=e488]: Check first
+              - generic [ref=e489]: Inspect before you use.
+              - generic [ref=e490]: Check things before using them.
+          - button "⚠️ Stay put Discomfort is a warning sign. Staying in uncomfortable situations keeps you inside the risk zone." [ref=e491] [cursor=pointer]:
+            - generic [ref=e494]: ⚠️
+            - generic [ref=e495]:
+              - strong [ref=e496]: Stay put
+              - generic [ref=e497]: Discomfort is a warning sign.
+              - generic [ref=e498]: Staying in uncomfortable situations keeps you inside the risk zone.
+          - button "↩️ Move away Distance is protection. Move away from anything risky." [ref=e499] [cursor=pointer]:
+            - generic [ref=e502]: ↩️
+            - generic [ref=e503]:
+              - strong [ref=e504]: Move away
+              - generic [ref=e505]: Distance is protection.
+              - generic [ref=e506]: Move away from anything risky.
+        - button "Submit selected actions" [disabled] [ref=e507] [cursor=pointer]

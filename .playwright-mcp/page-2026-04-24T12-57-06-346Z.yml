@@ -1,0 +1,195 @@
+- generic [active] [ref=e1]:
+  - status "EcoWay loading" [ref=e3]:
+    - generic [ref=e4]:
+      - heading [level=1] [ref=e6]: EcoWay
+      - paragraph [ref=e7]: The Right Way
+      - generic "Evergreen Eco Group partner" [ref=e8]:
+        - paragraph [ref=e9]: Evergreen Eco Group
+  - generic [ref=e11]:
+    - banner [ref=e12]:
+      - generic "EcoWay account header" [ref=e13]:
+        - button "Open settings. Current streak 0":
+          - generic:
+            - generic: 
+          - generic:
+            - generic: 
+            - generic: "0"
+          - generic: Settings and streak
+        - generic "Account status":
+          - button "Open Hearts. 5 hearts remaining":
+            - generic:
+              - generic: 
+            - generic: "5"
+            - generic: Hearts remaining
+          - button "Open EcoCoins. 0 EcoCoins available":
+            - generic:
+              - generic: 
+            - generic: "0"
+            - generic: EcoCoins balance
+    - main [ref=e14]:
+      - generic [ref=e15]:
+        - generic:
+          - generic "Garden":
+            - generic:
+              - generic:
+                - generic: 
+              - generic:
+                - generic: Current tab
+                - heading "Garden" [level=1]
+          - paragraph: Plant here, then let missions grow it.
+          - generic:
+            - generic:
+              - generic:
+                - generic "Plot 1 · ready to plant":
+                  - generic:
+                    - generic: P1
+                    - generic: Ready
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Ready to plant
+                  - generic:
+                    - button "":
+                      - generic: 
+                - generic "Plot 2 · ready to plant":
+                  - generic:
+                    - generic: P2
+                    - generic: Ready
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Ready to plant
+                  - generic:
+                    - button "":
+                      - generic: 
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P3
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P4
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P5
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P6
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P7
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+                - generic "Locked plot · expand with EcoCoins":
+                  - generic:
+                    - generic: P8
+                    - generic:
+                      - generic: 
+                  - generic:
+                    - generic:
+                      - generic: 
+                  - generic: Unlock with EcoCoins
+            - generic:
+              - button " Expand P3 · 90" [disabled]:
+                - generic: 
+                - text: Expand P3 · 90
+              - paragraph: Need 90 more EcoCoins for Plot 3.
+          - generic:
+            - button " Missions":
+              - generic: 
+              - text: Missions
+            - button " Boost · 3" [disabled]:
+              - generic: 
+              - text: Boost · 3
+          - paragraph: Plant first to unlock Boost.
+        - group:
+          - generic " Environment recovery Finish missions and apply restoration steps to start healing the wider environment. 0%":
+            - generic:
+              - strong:
+                - generic: 
+                - text: Environment recovery
+              - paragraph: Finish missions and apply restoration steps to start healing the wider environment.
+            - generic: 0%
+          - text:   +      
+        - generic:
+          - generic:
+            - heading "Quick care" [level=3]
+          - generic:
+            - generic:
+              - generic: 
+              - text: 2 empty
+            - generic:
+              - generic: 
+              - text: 0 thirsty
+            - generic:
+              - generic: 
+              - text: 0 ready
+          - generic:
+            - button " Water all" [disabled]:
+              - generic: 
+              - text: Water all
+            - button " Harvest" [disabled]:
+              - generic: 
+              - text: Harvest
+            - button " Prev":
+              - generic: 
+              - text: Prev
+            - button "Next ":
+              - text: Next
+              - generic: 
+          - paragraph: Plant first. Seeds start at 8 EcoCoins.
+        - generic:
+          - generic:
+            - heading "Plot P1" [level=3]
+          - paragraph: Plant here, then use missions to grow it.
+          - generic:
+            - button " Plant crop":
+              - generic: 
+              - text: Plant crop
+          - paragraph: Seeds start at 8 EcoCoins.
+    - navigation "Primary navigation":
+      - button "Open Missions":
+        - generic: 
+        - generic: Missions
+        - text: Missions
+      - button "Open Garden":
+        - generic: 
+        - generic: Garden
+        - text: Garden
+      - button "Open Dashboard":
+        - generic: 
+        - generic: Dashboard
+        - text: Dashboard
+      - button "Open Progress":
+        - generic: 
+        - generic: Progress
+        - text: Progress
+  - generic:
+    - generic: Pull to refresh

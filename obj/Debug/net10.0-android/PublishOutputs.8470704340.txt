@@ -1,0 +1,3 @@
+D:\Project\Hazeyelert\bin\Debug\net10.0-android\publish\com.companyname.hazeyelert-Signed.apk
+D:\Project\Hazeyelert\bin\Debug\net10.0-android\publish\com.companyname.hazeyelert.apk
+D:\Project\Hazeyelert\bin\Debug\net10.0-android\publish\_Microsoft.Android.Resource.Designer.dll

@@ -1,0 +1,37 @@
+- main [ref=e10]:
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - button "Back" [ref=e100] [cursor=pointer]
+      - generic [ref=e101]:
+        - generic [ref=e102]: Question
+        - strong [ref=e103]: 1 / 7
+    - generic [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]: Chapter 1
+          - generic [ref=e109]: Tap the COLOR clue
+        - heading "Spot the spill" [level=1] [ref=e110]
+        - paragraph [ref=e111]: The Day That Won’t Stay Quiet
+      - generic [ref=e114]:
+        - generic [ref=e115]: Mission focus
+        - strong [ref=e116]: Scan first
+        - paragraph [ref=e117]: Slow down and spot the hidden danger before you move again.
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]: Question
+          - heading "Which clue caused the fall?" [level=2] [ref=e121]
+          - paragraph [ref=e122]: Your vision scans the room. Focus on the clue that actually caused the fall.
+        - generic [ref=e123]:
+          - button "A 🟦 Blue — A thin, shiny puddle near the door" [ref=e124] [cursor=pointer]:
+            - generic [ref=e125]: A
+            - generic [ref=e126]: 🟦 Blue — A thin, shiny puddle near the door
+          - button "B 🟨 Yellow — A neatly folded uniform" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: B
+            - generic [ref=e129]: 🟨 Yellow — A neatly folded uniform
+          - button "C 🟥 Red — A closed cabinet" [ref=e130] [cursor=pointer]:
+            - generic [ref=e131]: C
+            - generic [ref=e132]: 🟥 Red — A closed cabinet
+      - group [ref=e133]:
+        - generic "Scene details Read the full situation" [ref=e134] [cursor=pointer]:
+          - generic [ref=e135]: Scene details
+          - generic [ref=e136]: Read the full situation

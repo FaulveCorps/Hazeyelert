@@ -1,0 +1,17 @@
+- main [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: Hazard-ready mode
+      - generic [ref=e8]: Offline + classroom friendly
+    - generic [ref=e9]:
+      - heading "Be alert." [level=1] [ref=e10]
+      - heading "Be aware." [level=2] [ref=e11]
+      - paragraph [ref=e12]: Hazeyelert turns everyday school hazards into quick decision drills so you can react before a small problem turns into a big one.
+    - generic [ref=e13]:
+      - article [ref=e14]:
+        - paragraph [ref=e15]: One bad morning can turn into a chain of hazards if you stop paying attention.
+      - article [ref=e16]:
+        - paragraph [ref=e17]: Two story chapters train you through slips, shocks, noise, smoke, and falling debris.
+      - article [ref=e18]:
+        - paragraph [ref=e19]: Stay alert, stay aware, and keep every mission ready offline.
+    - button "Enter dashboard" [ref=e20] [cursor=pointer]

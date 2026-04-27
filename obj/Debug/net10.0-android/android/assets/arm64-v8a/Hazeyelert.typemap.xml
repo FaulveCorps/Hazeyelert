@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="Hazeyelert" mvid="e03e1b8b38864488ab305dadaf9a2e24">
+  <java-to-managed>
+    <entry java-name="crc641ddbea3df2ed4201/MainActivity" managed-name="Hazeyelert.MainActivity, Hazeyelert" managed-type-token-id="33554441" />
+    <entry java-name="crc641ddbea3df2ed4201/MainApplication" managed-name="Hazeyelert.MainApplication, Hazeyelert" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc641ddbea3df2ed4201/MainActivity" managed-name="Hazeyelert.MainActivity, Hazeyelert" managed-type-token-id="33554441" />
+    <entry java-name="crc641ddbea3df2ed4201/MainApplication" managed-name="Hazeyelert.MainApplication, Hazeyelert" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>

@@ -1,0 +1,80 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic "Hazeyelert app header" [ref=e5]:
+      - generic [ref=e6]:
+        - generic "Hazeyelert app title" [ref=e7]:
+          - strong [ref=e8]: Hazeyelert
+        - generic [ref=e9]: Dashboard
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: Today’s focus route
+          - heading "Hazeyelert" [level=1] [ref=e15]
+          - paragraph [ref=e16]: Start from the strange morning warning and see if you can break the bad luck.
+          - generic [ref=e17]:
+            - button "Start mission" [ref=e18] [cursor=pointer]
+            - button "Mission board" [ref=e19] [cursor=pointer]
+        - img "The Day That Won’t Stay Quiet" [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "Mindincident files" [level=2] [ref=e24]
+          - button "See route" [ref=e25] [cursor=pointer]
+        - generic [ref=e26]:
+          - article [ref=e27]:
+            - generic [ref=e28]:
+              - heading "Slip and fall" [level=3] [ref=e29]
+              - paragraph [ref=e30]: Catch wet-floor clues before one rushed step turns into a hard landing.
+          - article [ref=e31]:
+            - generic [ref=e32]:
+              - heading "Electrical check" [level=3] [ref=e33]
+              - paragraph [ref=e34]: Dry hands, inspect the wire, then plug in — never in reverse.
+          - article [ref=e35]:
+            - generic [ref=e36]:
+              - heading "Noise response" [level=3] [ref=e37]
+              - paragraph [ref=e38]: Protect hearing first when sudden drills or machines hit hard.
+          - article [ref=e39]:
+            - generic [ref=e40]:
+              - heading "Smoke escape" [level=3] [ref=e41]
+              - paragraph [ref=e42]: Stay low, find cleaner air, and move toward a safe exit route.
+          - article [ref=e43]:
+            - generic [ref=e44]:
+              - heading "Impact zones" [level=3] [ref=e45]
+              - paragraph [ref=e46]: Avoid open hallways and ceiling cracks when debris may fall.
+      - generic [ref=e47]:
+        - article [ref=e48]:
+          - generic [ref=e49]:
+            - heading "Undanger Meter Score" [level=2] [ref=e50]
+            - generic [ref=e51]: Live
+          - generic [ref=e52]:
+            - generic [ref=e54]: 0%
+            - generic [ref=e55]:
+              - paragraph [ref=e56]: Each correct response raises your readiness for the next scene.
+              - strong [ref=e57]: 0 safe points banked
+        - article [ref=e58]:
+          - generic [ref=e59]:
+            - heading "Mission preview" [level=2] [ref=e60]
+            - generic [ref=e61]: Next up
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - generic [ref=e64]: Run progress
+              - strong [ref=e65]: 0%
+            - generic [ref=e66]:
+              - generic [ref=e67]: Active chapter
+              - strong [ref=e68]: Chapter 1
+          - heading "The Day That Won’t Stay Quiet" [level=3] [ref=e69]
+          - paragraph [ref=e70]: You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.
+          - button "Open focus chapter" [ref=e71] [cursor=pointer]
+  - navigation "Primary navigation" [ref=e72]:
+    - button "Mission" [ref=e73] [cursor=pointer]:
+      - img [ref=e75]
+      - generic [ref=e78]: Mission
+    - button "Home" [ref=e79] [cursor=pointer]:
+      - img [ref=e81]
+      - generic [ref=e83]: Home
+    - button "Profile" [ref=e84] [cursor=pointer]:
+      - img [ref=e86]
+      - generic [ref=e91]: Profile
+    - button "Settings" [ref=e92] [cursor=pointer]:
+      - img [ref=e94]
+      - generic [ref=e97]: Settings

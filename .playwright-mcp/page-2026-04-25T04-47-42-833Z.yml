@@ -1,0 +1,37 @@
+- main [ref=e10]:
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - button "Back" [ref=e100] [cursor=pointer]
+      - generic [ref=e101]:
+        - generic [ref=e102]: Question
+        - strong [ref=e103]: 1 / 7
+    - generic [ref=e104]:
+      - generic [ref=e106]:
+        - img "The Day That Won’t Stay Quiet" [ref=e107]
+        - generic [ref=e108]:
+          - generic [ref=e111]:
+            - generic [ref=e112]: Chapter 1
+            - strong [ref=e113]: Spot the spill
+          - complementary [ref=e114]:
+            - generic [ref=e115]: "!"
+            - generic [ref=e116]:
+              - strong [ref=e117]: Mission focus
+              - generic [ref=e118]: Scan first
+              - generic [ref=e119]: Slow down and spot the hidden danger before you move again.
+        - generic [ref=e121]: Seriously...?
+        - paragraph [ref=e123]: The Day That Won’t Stay Quiet
+      - paragraph [ref=e126]: You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.
+      - generic [ref=e127]:
+        - generic [ref=e129]:
+          - paragraph [ref=e130]: Quiz (Tap the COLOR clue)
+          - heading "Which clue caused the fall?" [level=2] [ref=e131]
+        - generic [ref=e133]:
+          - button "A 🟦 Blue — A thin, shiny puddle near the door" [ref=e134] [cursor=pointer]:
+            - generic [ref=e135]: A
+            - generic [ref=e136]: 🟦 Blue — A thin, shiny puddle near the door
+          - button "B 🟨 Yellow — A neatly folded uniform" [ref=e137] [cursor=pointer]:
+            - generic [ref=e138]: B
+            - generic [ref=e139]: 🟨 Yellow — A neatly folded uniform
+          - button "C 🟥 Red — A closed cabinet" [ref=e140] [cursor=pointer]:
+            - generic [ref=e141]: C
+            - generic [ref=e142]: 🟥 Red — A closed cabinet

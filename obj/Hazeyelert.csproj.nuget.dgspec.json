@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jpfau\\Desktop\\Project\\Hazeyelert\\Hazeyelert.csproj": {}
+    "D:\\Project\\Hazeyelert\\Hazeyelert.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jpfau\\Desktop\\Project\\Hazeyelert\\Hazeyelert.csproj": {
+    "D:\\Project\\Hazeyelert\\Hazeyelert.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jpfau\\Desktop\\Project\\Hazeyelert\\Hazeyelert.csproj",
+        "projectUniqueName": "D:\\Project\\Hazeyelert\\Hazeyelert.csproj",
         "projectName": "Hazeyelert",
-        "projectPath": "C:\\Users\\jpfau\\Desktop\\Project\\Hazeyelert\\Hazeyelert.csproj",
+        "projectPath": "D:\\Project\\Hazeyelert\\Hazeyelert.csproj",
         "packagesPath": "C:\\Users\\jpfau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jpfau\\Desktop\\Project\\Hazeyelert\\obj\\",
+        "outputPath": "D:\\Project\\Hazeyelert\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -1334,7 +1334,7 @@
         "android-x64": {
           "#import": []
         },
-        "iossimulator-x64": {
+        "ios-arm64": {
           "#import": []
         },
         "maccatalyst-x64": {

@@ -1,0 +1,110 @@
+- main [ref=e10]:
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - button "Back" [ref=e100] [cursor=pointer]
+      - generic [ref=e101]:
+        - generic [ref=e102]: Scene
+        - strong [ref=e103]: 1 / 7
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]: Chapter 1
+        - generic [ref=e107]: Spot the spill
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: CHAPTER
+          - generic [ref=e114]: "1"
+        - heading "The Day That Won’t Stay Quiet" [level=1] [ref=e115]
+        - paragraph [ref=e116]: Scan the scene first and lock onto the hazard before you move.
+      - img "The Day That Won’t Stay Quiet" [ref=e119]
+      - complementary [ref=e120]:
+        - generic [ref=e121]: "!"
+        - generic [ref=e122]:
+          - strong [ref=e123]: Mission focus
+          - generic [ref=e124]: Scan first
+          - paragraph [ref=e125]: Slow down and spot the hidden danger before you move again.
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]: How answer checks work
+          - generic [ref=e130]: Example mission level
+        - generic [ref=e131]: Practice demo
+      - generic [ref=e132]:
+        - 'heading "Example level: Pick the safest response" [level=2] [ref=e133]'
+        - paragraph [ref=e134]: This sample mission shows one hazard clue and several answers. Read the clue, pick the safest option, then check your answer.
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - strong [ref=e137]: Spot the spill
+          - paragraph [ref=e138]: Chapter 1 · Tap the COLOR clue
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]: The Day That Won’t Stay Quiet
+              - generic [ref=e143]: Tap the COLOR clue
+            - generic [ref=e144]:
+              - img "The Day That Won’t Stay Quiet" [ref=e146]
+              - generic:
+                - generic:
+                  - strong: A
+                  - generic: 📖
+                  - generic: Read the clue first
+                - generic:
+                  - strong: B
+                  - generic: ☝️
+                  - generic: Pick the safest option
+                - generic:
+                  - strong: C
+                  - generic: ✅
+                  - generic: Check the answer
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - strong [ref=e149]: Quick guide
+              - generic [ref=e150]: 3 steps
+            - list "Hazeyelert mission prefab steps" [ref=e151]:
+              - listitem [ref=e152]:
+                - generic [ref=e153]: "1"
+                - generic [ref=e154]: 📖
+                - generic [ref=e155]:
+                  - strong [ref=e156]: Start
+                  - generic [ref=e157]: Read the clue carefully.
+              - listitem [ref=e158]:
+                - generic [ref=e159]: "2"
+                - generic [ref=e160]: ☝️
+                - generic [ref=e161]:
+                  - strong [ref=e162]: Next
+                  - generic [ref=e163]: Tap the safest answer choice.
+              - listitem [ref=e164]:
+                - generic [ref=e165]: "3"
+                - generic [ref=e166]: ✅
+                - generic [ref=e167]:
+                  - strong [ref=e168]: Check
+                  - generic [ref=e169]: Check once your choice is locked in.
+        - paragraph [ref=e170]:
+          - generic [ref=e171]: ⓘ
+          - generic [ref=e172]: The live mission waits for the safer answer, so use this example rhythm before locking in your real choice.
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - heading "Scenario" [level=2] [ref=e175]
+        - generic [ref=e176]: Read first
+      - paragraph [ref=e177]: You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.
+    - generic [ref=e178]:
+      - generic [ref=e180]:
+        - generic [ref=e181]: Quiz (Tap the COLOR clue)
+        - heading "Which clue caused the fall?" [level=2] [ref=e182]
+      - generic [ref=e184]:
+        - button "A 🟦 Blue — A thin, shiny puddle near the door" [ref=e185] [cursor=pointer]:
+          - generic [ref=e186]: A
+          - generic [ref=e187]: 🟦 Blue — A thin, shiny puddle near the door
+        - button "B 🟨 Yellow — A neatly folded uniform" [ref=e188] [cursor=pointer]:
+          - generic [ref=e189]: B
+          - generic [ref=e190]: 🟨 Yellow — A neatly folded uniform
+        - button "C 🟥 Red — A closed cabinet" [ref=e191] [cursor=pointer]:
+          - generic [ref=e192]: C
+          - generic [ref=e193]: 🟥 Red — A closed cabinet
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e196]: Instinct note
+        - heading "Pet guide" [level=2] [ref=e197]
+        - paragraph [ref=e198]: Your vision scans the room. Focus on the clue that actually caused the fall.
+      - generic [ref=e199]:
+        - generic [ref=e200]: Seriously...?
+        - img "Mascot guide" [ref=e201]

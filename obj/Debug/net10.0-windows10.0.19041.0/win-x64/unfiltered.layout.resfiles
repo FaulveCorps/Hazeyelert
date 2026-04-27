@@ -51,6 +51,11 @@ dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
 dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
+splashSplashScreen.scale-100.png
+splashSplashScreen.scale-125.png
+splashSplashScreen.scale-150.png
+splashSplashScreen.scale-200.png
+splashSplashScreen.scale-400.png
 AboutAssets.txt
 wwwroot\app.js
 wwwroot\assets\icon-alarm.svg
@@ -67,5 +72,6 @@ wwwroot\assets\scene-electrical.svg
 wwwroot\assets\scene-fire.svg
 wwwroot\assets\scene-noise.svg
 wwwroot\assets\scene-spill.svg
+wwwroot\assets\startup-splash-brand.svg
 wwwroot\index.html
 wwwroot\styles.css

@@ -1,0 +1,4 @@
+- Root `Hazeyelert` app is a .NET MAUI host that renders the user-facing UI from `wwwroot/` in a WebView.
+- Verified UI regression command: `npm run verify:ui` from workspace root.
+- Verified Windows build command: `dotnet build .\Hazeyelert.csproj -f net10.0-windows10.0.19041.0`.
+- Mission/quiz UI work should focus on `wwwroot/app.js` and `wwwroot/styles.css`; MAUI files are mostly shell/host plumbing.

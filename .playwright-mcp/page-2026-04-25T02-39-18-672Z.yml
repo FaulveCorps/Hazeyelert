@@ -1,0 +1,32 @@
+- main [ref=e10]:
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - button "Back" [ref=e100] [cursor=pointer]
+      - generic [ref=e101]:
+        - generic [ref=e102]: Question
+        - strong [ref=e103]: 1 / 7
+    - generic [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]: Chapter 1
+          - generic [ref=e109]: Tap the COLOR clue
+        - heading "Spot the spill" [level=1] [ref=e110]
+        - paragraph [ref=e111]: The Day That Won’t Stay Quiet
+      - generic [ref=e114]:
+        - generic [ref=e115]: Scene details
+        - paragraph [ref=e116]: You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e119]: Question
+          - heading "Which clue caused the fall?" [level=2] [ref=e120]
+          - paragraph [ref=e121]: Your vision scans the room. Focus on the clue that actually caused the fall.
+        - generic [ref=e122]:
+          - button "A 🟦 Blue — A thin, shiny puddle near the door" [ref=e123] [cursor=pointer]:
+            - generic [ref=e124]: A
+            - generic [ref=e125]: 🟦 Blue — A thin, shiny puddle near the door
+          - button "B 🟨 Yellow — A neatly folded uniform" [ref=e126] [cursor=pointer]:
+            - generic [ref=e127]: B
+            - generic [ref=e128]: 🟨 Yellow — A neatly folded uniform
+          - button "C 🟥 Red — A closed cabinet" [ref=e129] [cursor=pointer]:
+            - generic [ref=e130]: C
+            - generic [ref=e131]: 🟥 Red — A closed cabinet

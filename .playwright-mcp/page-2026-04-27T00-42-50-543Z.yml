@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - status "Hazeyelert loading" [ref=e3]:
+    - img "Hazeyelert SNMRO Group" [ref=e4]
+    - paragraph [ref=e5]: Safety readiness loading
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic:
+        - generic:
+          - generic: Hazard-ready mode
+          - generic: Offline + classroom friendly
+        - generic:
+          - heading "Be alert." [level=1]
+          - heading "Be aware." [level=2]
+          - paragraph: Hazeyelert turns everyday school hazards into quick decision drills so you can react before a small problem turns into a big one.
+        - generic:
+          - article:
+            - paragraph: One bad morning can turn into a chain of hazards if you stop paying attention.
+          - article:
+            - paragraph: Two story chapters train you through slips, shocks, noise, smoke, and falling debris.
+          - article:
+            - paragraph: Stay alert, stay aware, and keep every mission ready offline.
+        - button "Enter dashboard"

@@ -1,0 +1,46 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - button "Back" [ref=e6] [cursor=pointer]
+      - generic [ref=e7]:
+        - generic [ref=e8]: Question
+        - strong [ref=e9]: 1 / 3
+    - generic [ref=e10]:
+      - generic [ref=e12]:
+        - img "The Night That Didn’t Stay Quiet" [ref=e13]
+        - generic [ref=e14]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: Chapter 2
+            - strong [ref=e19]: Read the smoke
+          - complementary [ref=e20]:
+            - generic [ref=e21]: ✕
+            - generic [ref=e22]:
+              - strong [ref=e23]: Smoke response
+              - generic [ref=e24]: React fast
+              - generic [ref=e25]: When the room fills with smoke, breathing space and visibility drop fast.
+        - generic [ref=e27]: I need to move.
+        - paragraph [ref=e29]: The Night That Didn’t Stay Quiet
+      - paragraph [ref=e32]: You wake up inside your condo unit and smoke fills the air. Your throat burns immediately. Your parents are far away at a store, and you are alone. Smoke slips under the door, a crackling sound spreads through the building, and heat starts rising fast.
+      - generic [ref=e33]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Quiz (Choose the safest response)
+          - heading "Which response is safest in smoke?" [level=2] [ref=e37]
+        - generic [ref=e39]:
+          - button "🧎 Stay low Safer air is closer to the floor. Move carefully under the smoke instead of standing tall in it." [ref=e40] [cursor=pointer]:
+            - generic [ref=e43]: 🧎
+            - generic [ref=e44]:
+              - strong [ref=e45]: Stay low
+              - generic [ref=e46]: Safer air is closer to the floor.
+              - generic [ref=e47]: Move carefully under the smoke instead of standing tall in it.
+          - button "🏃 Run through smoke Fast is not always safe. Charging upright through thick smoke cuts visibility and breathing space." [ref=e48] [cursor=pointer]:
+            - generic [ref=e51]: 🏃
+            - generic [ref=e52]:
+              - strong [ref=e53]: Run through smoke
+              - generic [ref=e54]: Fast is not always safe.
+              - generic [ref=e55]: Charging upright through thick smoke cuts visibility and breathing space.
+          - button "🧍 Wait in place Standing still gives smoke time. Waiting for smoke to clear leaves you in the hazard instead of moving out of it." [ref=e56] [cursor=pointer]:
+            - generic [ref=e59]: 🧍
+            - generic [ref=e60]:
+              - strong [ref=e61]: Wait in place
+              - generic [ref=e62]: Standing still gives smoke time.
+              - generic [ref=e63]: Waiting for smoke to clear leaves you in the hazard instead of moving out of it.

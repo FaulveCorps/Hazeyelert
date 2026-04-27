@@ -1,151 +1,384 @@
 const quizSteps = [
     {
-        id: "spill-1",
+        id: "quiet-puddle",
         chapter: "Chapter 1",
-        chapterTitle: "Hallway slip zone",
-        title: "A hallway spill is spreading near the classroom entrance.",
-        question: "What should you do first when you notice the wet floor?",
-        story: "Students are still walking toward the puddle, so the safest move is the one that prevents more people from stepping into danger.",
-        guide: "Protect people first, then help an adult secure the area.",
+        chapterTitle: "The Day That Won’t Stay Quiet",
+        title: "Spot the spill",
+        question: "Which clue caused the fall?",
+        story: "You wake up with a strange feeling — not fear, not stress, just something off. Your alarm did not ring. Your phone is dead. You stand, take one step, and suddenly slip. Your back hits the floor, your elbow scrapes hard, and a cold patch touches your hand. Water. Something in this room clearly caused it.",
+        guide: "Your vision scans the room. Focus on the clue that actually caused the fall.",
         sceneTheme: "spill",
         image: "assets/scene-spill.svg",
+        choiceLayout: "stacked",
+        answerModeLabel: "Tap the COLOR clue",
+        badge: {
+            tone: "warning",
+            title: "Mission focus",
+            delta: "Scan first",
+            copy: "Slow down and spot the hidden danger before you move again."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Safety thinking",
+            delta: "+1 Badge",
+            copy: "You caught the spill before it could turn into a second fall."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Hidden hazard",
+            delta: "-1 Badge",
+            copy: "The real clue was the puddle — missing it keeps the slip risk alive."
+        },
+        speechBubble: "Seriously...?",
         options: [
-            { id: "report-spill", label: "Warn nearby classmates and report the spill to a teacher.", correct: true },
-            { id: "jump-over", label: "Jump over the puddle and keep going.", correct: false },
-            { id: "slide-check", label: "Test the floor with your shoe to see how slippery it is.", correct: false }
+            { id: "blue-puddle", label: "🟦 Blue — A thin, shiny puddle near the door", correct: true },
+            { id: "yellow-uniform", label: "🟨 Yellow — A neatly folded uniform", correct: false },
+            { id: "red-cabinet", label: "🟥 Red — A closed cabinet", correct: false }
         ]
     },
     {
-        id: "wire-1",
-        chapter: "Chapter 2",
-        chapterTitle: "Electrical caution",
-        title: "A damaged wire is hanging from a computer cart.",
-        question: "What is the safest response?",
-        story: "Loose electrical equipment can shock anyone who touches it, especially if students crowd around to inspect it.",
-        guide: "Keep others back and let a responsible adult handle electrical hazards.",
+        id: "quiet-wire-order",
+        chapter: "Chapter 1",
+        chapterTitle: "The Day That Won’t Stay Quiet",
+        title: "Handle the charger safely",
+        question: "Which order is safest?",
+        story: "You push yourself up, grab your charger, and reach for the outlet. Your phone is still dead, you are still in a hurry, and something feels off — but you move anyway. Then the shock hits. A sharp zap stings your fingers, and only after pulling back do you notice the exposed wire you missed.",
+        guide: "Your brain wants to rush. The safer order is dry hands first, check the wire next, and plug it in last.",
         sceneTheme: "wire",
         image: "assets/scene-electrical.svg",
+        choiceLayout: "stacked",
+        answerModeLabel: "Pick the correct order",
+        badge: {
+            tone: "warning",
+            title: "Electrical check",
+            delta: "Dry first",
+            copy: "Pause before plugging in — wet hands and damaged wires do not forgive shortcuts."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Circuit shield",
+            delta: "+1 Badge",
+            copy: "You put inspection before urgency and avoided another shock."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Trap choice",
+            delta: "-1 Badge",
+            copy: "Rushing the charger order turns a dead phone into a live hazard."
+        },
+        speechBubble: "Wait... something's wrong.",
         options: [
-            { id: "alert-teacher", label: "Move away and alert a teacher immediately.", correct: true },
-            { id: "plug-out", label: "Pull the plug out yourself as fast as possible.", correct: false },
-            { id: "cover-wire", label: "Wrap the damaged part in paper and finish class.", correct: false }
+            { id: "order-3-2-1", label: "3-2-1 — Make sure your hands are dry → Check the wire → Plug it in", correct: true },
+            { id: "order-2-3-1", label: "2-3-1 — Check the wire → Make sure your hands are dry → Plug it in", correct: false },
+            { id: "order-1-2-3", label: "1-2-3 — Plug it in → Check the wire → Make sure your hands are dry", correct: false }
         ]
     },
     {
-        id: "wire-2",
-        chapter: "Chapter 2",
-        chapterTitle: "Electrical caution",
-        title: "You need to wash your hands before touching a plugged-in appliance.",
-        question: "Which choice keeps you safe around electricity?",
-        story: "Electricity and moisture are a rough duo. Even a quick shortcut can become a dangerous one.",
-        guide: "Dry hands completely before touching switches, plugs, or appliances.",
-        sceneTheme: "wire",
-        image: "assets/scene-electrical.svg",
-        options: [
-            { id: "wet-hands", label: "Dry your hands completely before touching the appliance.", correct: true },
-            { id: "wipe-on-shirt", label: "Wipe your hands on your shirt and hope for the best.", correct: false },
-            { id: "tap-fast", label: "Touch the switch quickly so it will be over sooner.", correct: false }
-        ]
-    },
-    {
-        id: "fire-1",
-        chapter: "Chapter 3",
-        chapterTitle: "Fire exit protocol",
-        title: "The fire alarm sounds and the hallway starts filling with smoke.",
-        question: "Which actions belong in the evacuation plan?",
-        story: "Fire response is a sequence, not a freestyle routine. The safest steps are the calm, practiced ones.",
-        guide: "Choose every safe evacuation action before moving to the next scene.",
-        sceneTheme: "fire",
-        image: "assets/scene-fire.svg",
-        selectionMode: "multi",
-        options: [
-            { id: "alarm", label: "Respond to the alarm and begin evacuation right away.", correct: true },
-            { id: "exit", label: "Use the nearest safe exit with your group.", correct: true },
-            { id: "hide", label: "Hide in a storage room until the noise stops.", correct: false },
-            { id: "grab-bag", label: "Run back for your bag before leaving.", correct: false }
-        ]
-    },
-    {
-        id: "fire-2",
-        chapter: "Chapter 3",
-        chapterTitle: "Fire exit protocol",
-        title: "Smoke is getting thicker on the way out.",
-        question: "How should you move through the smoky area?",
-        story: "Air is clearer lower to the ground, which makes your escape path safer and easier to follow.",
-        guide: "Stay calm, stay with your group, and keep breathing space low.",
-        sceneTheme: "fire",
-        image: "assets/scene-fire.svg",
-        options: [
-            { id: "stay-low", label: "Stay low and move quickly to the exit.", correct: true },
-            { id: "run-fast", label: "Stand tall and sprint wherever the crowd goes.", correct: false },
-            { id: "open-door", label: "Open every door to search for a shortcut.", correct: false }
-        ]
-    },
-    {
-        id: "noise-1",
-        chapter: "Chapter 4",
-        chapterTitle: "Noise and hearing safety",
-        title: "The workshop machines are louder than usual.",
-        question: "Which protection should be used before entering?",
-        story: "Loud environments can damage hearing over time, even when the activity feels normal or familiar.",
-        guide: "Use the right protective gear before stepping into high-noise areas.",
+        id: "quiet-noise",
+        chapter: "Chapter 1",
+        chapterTitle: "The Day That Won’t Stay Quiet",
+        title: "Protect your hearing",
+        question: "What should you do first?",
+        story: "You step outside hoping the fresh air helps. Instead, a construction drill tears through the air. It is too much. Your head instantly aches, your shoulders tense, and everything feels louder than it should.",
+        guide: "Your body reacts before your mind here. Protect yourself from the noise first.",
         sceneTheme: "noise",
         image: "assets/scene-noise.svg",
+        choiceLayout: "stacked",
+        answerModeLabel: "Choose your first move",
+        badge: {
+            tone: "warning",
+            title: "Noise warning",
+            delta: "React fast",
+            copy: "The first move should lower the noise hitting your body, not increase it."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Instinct guard",
+            delta: "+1 Badge",
+            copy: "You protected your hearing before curiosity could pull you closer."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Trap choice",
+            delta: "-1 Badge",
+            copy: "Loud machinery is not something to ignore or approach without protection."
+        },
+        speechBubble: "Too loud...",
         options: [
-            { id: "hearing-protection", label: "Wear hearing protection before entering the workshop.", correct: true },
-            { id: "cover-ears", label: "Use your hands for a few seconds and continue.", correct: false },
-            { id: "speak-louder", label: "Shout instructions so everyone can hear.", correct: false }
+            { id: "blue-cover-ears", label: "🟦 Blue — Cover your ears and step back", correct: true },
+            { id: "red-walk-closer", label: "🟥 Red — Walk closer to check", correct: false },
+            { id: "yellow-ignore", label: "🟨 Yellow — Ignore it and continue", correct: false }
+        ]
+    },
+    {
+        id: "quiet-reset-strategy",
+        chapter: "Chapter 1",
+        chapterTitle: "The Day That Won’t Stay Quiet",
+        title: "Reset the morning",
+        question: "Which actions actually help you stay safe?",
+        story: "Your elbow hurts. Your fingers still feel weird. Your head is pounding, and it is not even mid-morning yet. It feels like bad luck, but maybe it is really a test of how aware you are. The next choices decide whether things get worse or better.",
+        guide: "Reset the day by choosing only the actions that actually lower risk.",
+        sceneTheme: "spill",
+        image: "assets/scene-spill.svg",
+        selectionMode: "multi",
+        choiceLayout: "grid",
+        answerModeLabel: "Choose all safe actions",
+        badge: {
+            tone: "warning",
+            title: "Break the bad luck",
+            delta: "Reset route",
+            copy: "Choose only the moves that actually lower the danger around you."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Good reset",
+            delta: "+1 Badge",
+            copy: "You picked the actions that calm the situation instead of feeding the chaos."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Missed safeguard",
+            delta: "-1 Badge",
+            copy: "A safe reset needs awareness, checking, and moving away from fresh risk."
+        },
+        speechBubble: "I need to reset.",
+        options: [
+            { id: "observe-surroundings", label: "1 — Slow down and observe your surroundings", correct: true },
+            { id: "ignore-dangers", label: "2 — Ignore small dangers", correct: false },
+            { id: "check-before-using", label: "3 — Check things before using them", correct: true },
+            { id: "stay-uncomfortable", label: "4 — Stay in uncomfortable situations", correct: false },
+            { id: "move-away-risk", label: "5 — Move away from anything risky", correct: true }
+        ]
+    },
+    {
+        id: "night-smoke-image",
+        chapter: "Chapter 2",
+        chapterTitle: "The Night That Didn’t Stay Quiet",
+        title: "Read the smoke",
+        question: "Which response is safest in smoke?",
+        story: "You wake up inside your condo unit and smoke fills the air. Your throat burns immediately. Your parents are far away at a store, and you are alone. Smoke slips under the door, a crackling sound spreads through the building, and heat starts rising fast.",
+        guide: "In smoke, the safer image is the one that keeps you low and moving carefully.",
+        sceneTheme: "fire",
+        image: "assets/scene-fire.svg",
+        choiceLayout: "visual",
+        answerModeLabel: "Choose the safest response",
+        badge: {
+            tone: "danger",
+            title: "Smoke response",
+            delta: "React fast",
+            copy: "When the room fills with smoke, breathing space and visibility drop fast."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Low and steady",
+            delta: "+1 Badge",
+            copy: "You chose the response that keeps you lower and moving toward safer air."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Trap choice",
+            delta: "-1 Badge",
+            copy: "Running upright or waiting in place lets smoke take control of the room."
+        },
+        speechBubble: "I need to move.",
+        options: [
+            { id: "image-a", label: "A — Stay low near the floor and move carefully under the smoke", correct: true },
+            { id: "image-b", label: "B — Run straight through thick smoke", correct: false },
+            { id: "image-c", label: "C — Stand still and wait for the smoke to clear", correct: false }
+        ]
+    },
+    {
+        id: "night-risk-match",
+        chapter: "Chapter 2",
+        chapterTitle: "The Night That Didn’t Stay Quiet",
+        title: "Read the hallway risk",
+        question: "Which risk match is safest?",
+        story: "You move into the hallway and smoke is everywhere. Then a loud thud hits from above. Something falls. Then another. The building shakes slightly. Escape is getting harder, and now falling objects are part of the danger too.",
+        guide: "Read the hallway fast: open space is more exposed, walls are safer, and ceiling cracks are a direct danger sign.",
+        sceneTheme: "fire",
+        image: "assets/scene-fire.svg",
+        choiceLayout: "visual",
+        answerModeLabel: "Pick the safest match",
+        badge: {
+            tone: "danger",
+            title: "Falling hazard",
+            delta: "Read the space",
+            copy: "Now it is not just fire — where you stand matters just as much as where you run."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Risk reader",
+            delta: "+1 Badge",
+            copy: "You read the hallway correctly and avoided the most exposed positions."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Trap choice",
+            delta: "-1 Badge",
+            copy: "Open hallways and ceiling cracks are exactly where the danger gets worse."
+        },
+        speechBubble: "Something's falling!",
+        options: [
+            { id: "risk-map-a", label: "A — Staying in open hallway: ⚠ Risky | Moving near walls: ✔ Safe | Standing under ceiling cracks: ☠ Dangerous", correct: true },
+            { id: "risk-map-b", label: "B — Staying in open hallway: ✔ Safe | Moving near walls: ⚠ Risky | Standing under ceiling cracks: ☠ Dangerous", correct: false },
+            { id: "risk-map-c", label: "C — Staying in open hallway: ⚠ Risky | Moving near walls: ☠ Dangerous | Standing under ceiling cracks: ✔ Safe", correct: false }
+        ]
+    },
+    {
+        id: "night-ordering",
+        chapter: "Chapter 2",
+        chapterTitle: "The Night That Didn’t Stay Quiet",
+        title: "Leave in the right order",
+        question: "Which order keeps you safest?",
+        story: "Fire spreads deeper inside the building. The air feels heavy, warm, and wrong beyond just smoke. Escape paths are getting blocked, pressure is building, and this is the moment when calm order matters more than panic speed.",
+        guide: "Assess briefly, move toward safer air or an exit route, and never panic-run into danger.",
+        sceneTheme: "fire",
+        image: "assets/scene-fire.svg",
+        choiceLayout: "visual",
+        answerModeLabel: "Pick the safest order",
+        badge: {
+            tone: "danger",
+            title: "Escape order",
+            delta: "Stay calm",
+            copy: "This is the part where panic wants control — do not hand it the wheel."
+        },
+        successBadge: {
+            tone: "success",
+            title: "Night survivor",
+            delta: "+1 Badge",
+            copy: "You kept the order clear: assess, move, and never panic-run."
+        },
+        failureBadge: {
+            tone: "danger",
+            title: "Panic route",
+            delta: "-1 Badge",
+            copy: "The safest order starts with a quick read of the room, not blind motion."
+        },
+        speechBubble: "Stay calm.",
+        options: [
+            { id: "order-2-1-3", label: "2-1-3 — Assess surroundings briefly → Move toward safer air or an exit route → Panic and run randomly", correct: true },
+            { id: "order-1-2-3", label: "1-2-3 — Move toward safer air or an exit route → Assess surroundings briefly → Panic and run randomly", correct: false },
+            { id: "order-3-1-2", label: "3-1-2 — Panic and run randomly → Move toward safer air or an exit route → Assess surroundings briefly", correct: false }
         ]
     }
 ];
 
 const categories = [
     {
-        title: "Slip response",
-        copy: "Spot wet zones, secure walkways, and escalate fast.",
+        title: "Slip and fall",
+        copy: "Catch wet-floor clues before one rushed step turns into a hard landing.",
         icon: "assets/icon-water.svg"
     },
     {
-        title: "Electrical safety",
-        copy: "Avoid damaged equipment and dry up before contact.",
+        title: "Electrical check",
+        copy: "Dry hands, inspect the wire, then plug in — never in reverse.",
         icon: "assets/icon-wire.svg"
     },
     {
-        title: "Emergency exit",
-        copy: "Follow the alarm, keep low, and move with purpose.",
-        icon: "assets/icon-alert.svg"
+        title: "Noise response",
+        copy: "Protect hearing first when sudden drills or machines hit hard.",
+        icon: "assets/icon-alarm.svg"
     },
     {
-        title: "Noise control",
-        copy: "Protect hearing before stepping into loud rooms.",
-        icon: "assets/icon-alarm.svg"
+        title: "Smoke escape",
+        copy: "Stay low, find cleaner air, and move toward a safe exit route.",
+        icon: "assets/icon-exit.svg"
+    },
+    {
+        title: "Impact zones",
+        copy: "Avoid open hallways and ceiling cracks when debris may fall.",
+        icon: "assets/icon-alert.svg"
     }
 ];
 
 const introHighlights = [
-    "Spot the danger before it spots your routine.",
-    "Train with quick hazard scenes built for school spaces.",
-    "Keep every response offline, fast, and classroom friendly."
+    "One bad morning can turn into a chain of hazards if you stop paying attention.",
+    "Two story chapters train you through slips, shocks, noise, smoke, and falling debris.",
+    "Stay alert, stay aware, and keep every mission ready offline."
 ];
 
 const profileBadges = [
     {
         title: "Floor scout",
-        copy: "You react quickly to slips and blocked paths."
+        copy: "You catch slippery clues before another crash lands." 
     },
     {
         title: "Circuit shield",
-        copy: "You know when to stop and call for help around wires."
-    },
-    {
-        title: "Exit guide",
-        copy: "You stay calm and choose safer evacuation moves."
+        copy: "You slow down around chargers, wires, and wet hands."
     },
     {
         title: "Sound guard",
-        copy: "You protect your hearing before the noise begins."
+        copy: "You protect yourself first when sudden noise hits hard."
+    },
+    {
+        title: "Smoke navigator",
+        copy: "You stay low, read the room, and move toward safer air."
+    },
+    {
+        title: "Night survivor",
+        copy: "You stay calm when fire, smoke, and falling hazards collide."
     }
 ];
+
+const missionPrefabPresets = {
+    "multiple-choice": {
+        pill: "How answer checks work",
+        exampleLabel: "Example mission level",
+        sceneLabel: "Response choice field",
+        sceneStatus: "Practice demo",
+        title: "Example level: Pick the safest response",
+        body: "This sample mission shows one hazard clue and several answers. Read the clue, pick the safest option, then check your answer.",
+        markers: [
+            { label: "A", glyph: "📖", text: "Read the clue first", tone: "info", x: 22, y: 30 },
+            { label: "B", glyph: "☝️", text: "Pick the safest option", tone: "danger", x: 52, y: 68 },
+            { label: "C", glyph: "✅", text: "Check the answer", tone: "success", x: 82, y: 30 }
+        ],
+        steps: [
+            { glyph: "📖", title: "Start", text: "Read the clue carefully.", tone: "info" },
+            { glyph: "☝️", title: "Next", text: "Tap the safest answer choice.", tone: "danger" },
+            { glyph: "✅", title: "Check", text: "Check once your choice is locked in.", tone: "success" }
+        ],
+        note: "The live mission waits for the safer answer, so use this example rhythm before locking in your real choice."
+    },
+    "icon-multiple-choice": {
+        pill: "How answer checks work",
+        exampleLabel: "Example mission level",
+        sceneLabel: "Icon choice practice scene",
+        sceneStatus: "Practice demo",
+        title: "Example level: Pick the best icon clue",
+        body: "This example uses visual answer cards instead of text-heavy options. Read the clue, pick the best icon choice, then check the answer.",
+        markers: [
+            { label: "A", glyph: "📖", text: "Read the clue first", tone: "info", x: 22, y: 30 },
+            { label: "B", glyph: "🖼️", text: "Tap the best visual choice", tone: "danger", x: 52, y: 68 },
+            { label: "C", glyph: "✅", text: "Check the answer", tone: "success", x: 82, y: 30 }
+        ],
+        steps: [
+            { glyph: "📖", title: "Start", text: "Read the clue before choosing.", tone: "info" },
+            { glyph: "🖼️", title: "Next", text: "Pick the visual answer that best matches.", tone: "danger" },
+            { glyph: "✅", title: "Check", text: "Check once the visual answer is selected.", tone: "success" }
+        ],
+        note: "After the practice demo, return to the live hazard scene and choose the real visual response."
+    },
+    "tag-select": {
+        pill: "How tagging works",
+        exampleLabel: "Example mission level",
+        sceneLabel: "Safety clue bank",
+        sceneStatus: "Practice demo",
+        title: "Example level: Tag the safe actions",
+        body: "The sample mission mixes safe and risky actions. Tap only the correct actions until the target set is full, then check your tags.",
+        markers: [
+            { label: "A", glyph: "🏷️", text: "Tag a safe action", tone: "danger", x: 24, y: 46 },
+            { label: "B", glyph: "🎯", text: "Fill the whole target set", tone: "info", x: 54, y: 62 },
+            { label: "C", glyph: "✅", text: "Check when the set is complete", tone: "success", x: 82, y: 36 }
+        ],
+        steps: [
+            { glyph: "🏷️", title: "Start", text: "Mark only the safe actions.", tone: "info" },
+            { glyph: "🎯", title: "Next", text: "Reach the full target count.", tone: "danger" },
+            { glyph: "✅", title: "Check", text: "Check once the tagged set is complete.", tone: "success" }
+        ],
+        note: "Use this example to learn the tagging rhythm, then return to the live mission level and tag the real safe set."
+    }
+};
 
 const compassIconMarkup = `
     <svg class="helper-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +388,9 @@ const compassIconMarkup = `
     </svg>
 `;
 
-const STORAGE_KEY = "hazeyelert-shell-state-v2";
+const STORAGE_KEY = "hazeyelert-shell-state-v3";
+const STARTUP_SPLASH_MIN_DURATION_MS = 1650;
+const STARTUP_SPLASH_EXIT_DURATION_MS = 540;
 const VIEW_ENTRANCE_STAGGER_MS = 56;
 const SOUND_DEFAULT_VOLUME = 0.62;
 const SOUND_EFFECT_OUTPUT_BOOST = 1.32;
@@ -173,6 +408,7 @@ const shell = document.getElementById("app-shell");
 const mainContent = document.getElementById("main-content");
 const headerContextKicker = document.getElementById("header-context-kicker");
 const navButtons = Array.from(document.querySelectorAll("[data-nav]"));
+const startupSplashStartedAt = window.performance?.now?.() ?? Date.now();
 
 const soundRuntime = {
     audioContext: null,
@@ -196,6 +432,35 @@ const state = {
     completedRun: false,
     savedProgress: null
 };
+
+let lastRenderedView = null;
+let lastRenderedQuizIndex = null;
+let startupSplashHidden = false;
+
+function hideStartupSplash() {
+    if (startupSplashHidden) {
+        return;
+    }
+
+    const splash = document.getElementById("startup-splash");
+    if (!(splash instanceof HTMLElement)) {
+        startupSplashHidden = true;
+        return;
+    }
+
+    startupSplashHidden = true;
+
+    const now = window.performance?.now?.() ?? Date.now();
+    const remainingDelay = Math.max(0, STARTUP_SPLASH_MIN_DURATION_MS - (now - startupSplashStartedAt));
+
+    window.setTimeout(() => {
+        splash.classList.add("hide");
+
+        window.setTimeout(() => {
+            splash.remove();
+        }, STARTUP_SPLASH_EXIT_DURATION_MS + 80);
+    }, remainingDelay);
+}
 
 function loadStoredProgress() {
     try {
@@ -707,6 +972,65 @@ function getProgressPercent(snapshot = state) {
     return Math.round((getAnsweredCount(snapshot) / getRunTotal(snapshot)) * 100);
 }
 
+function getMissionOutcome(snapshot = state) {
+    const total = getRunTotal(snapshot);
+    const score = clampNumber(Number.isFinite(snapshot?.score) ? snapshot.score : 0, 0, total);
+    const percent = Math.round((score / total) * 100);
+    const isComplete = percent >= 67;
+    const chapterSummaries = quizSteps
+        .reduce((collection, step) => {
+            if (!collection[step.chapter]) {
+                collection[step.chapter] = { total: 0, correct: 0 };
+            }
+
+            collection[step.chapter].total += 1;
+
+            const answer = snapshot?.answerHistory?.[step.id];
+            if (answer?.correct) {
+                collection[step.chapter].correct += 1;
+            }
+
+            return collection;
+        }, {});
+
+    const chaptersCleared = Object.values(chapterSummaries)
+        .filter((chapter) => chapter.correct === chapter.total)
+        .length;
+
+    const summary = isComplete
+        ? (percent === 100
+            ? "Mission complete. You cleared every hazard scene with the safest response."
+            : "Mission complete. You reached the safe-call threshold and made it through the route.")
+        : "Mission failed. You missed too many safety calls to clear the route this time.";
+
+    const recommendation = isComplete
+        ? (percent === 100
+            ? "Perfect clear — your awareness stayed sharp from the first clue to the last escape route."
+            : "Solid recovery. Replay the mission once more if you want to turn that safe finish into a full clear.")
+        : "Replay the mission and focus on the very first action that lowers danger instead of reacting late.";
+
+    return {
+        score,
+        total,
+        percent,
+        isComplete,
+        status: isComplete ? "complete" : "failed",
+        eyebrow: isComplete ? "Mission complete" : "Mission failed",
+        heading: isComplete ? "Mission complete" : "Mission failed",
+        icon: isComplete ? "★" : "✕",
+        summary,
+        recommendation,
+        chaptersCleared,
+        chapterCount: Object.keys(chapterSummaries).length,
+        primaryAction: isComplete
+            ? { action: "go-home", label: "Back home" }
+            : { action: "restart-quiz", label: "Retry mission" },
+        secondaryAction: isComplete
+            ? { action: "restart-quiz", label: "Replay mission" }
+            : { action: "go-home", label: "Back home" }
+    };
+}
+
 function getRunPositionLabel() {
     return `${Math.max(1, state.currentIndex - state.runStartIndex + 1)} / ${getRunTotal()}`;
 }
@@ -723,7 +1047,7 @@ function getSavedProgressMeta() {
     if (!hasHistory && !snapshot.completedRun && snapshot.currentIndex === snapshot.runStartIndex && !snapshot.answered) {
         return {
             label: "Start mission",
-            helper: "Run the full safety mission from the first hallway alert.",
+            helper: "Start from the strange morning warning and see if you can break the bad luck.",
             currentStep: quizSteps[0],
             progress: 0,
             hasSavedProgress: false,
@@ -744,12 +1068,59 @@ function getSavedProgressMeta() {
 
     return {
         label: "Resume mission",
-        helper: `Continue from ${currentStep.chapterTitle.toLowerCase()} and finish the route.`,
+        helper: `Continue from ${currentStep.chapterTitle.toLowerCase()} and finish the safety route.`,
         currentStep,
         progress: getProgressPercent(snapshot),
         hasSavedProgress: true,
         completedRun: false
     };
+}
+
+function hasSelectedProgress(snapshot) {
+    return Array.isArray(snapshot?.selected) && snapshot.selected.length > 0;
+}
+
+function hasInProgressMission(snapshot = getStatusSnapshot()) {
+    if (!snapshot || snapshot.completedRun) {
+        return false;
+    }
+
+    return Boolean(
+        Object.keys(snapshot.answerHistory ?? {}).length > 0
+        || snapshot.answered
+        || snapshot.currentIndex > snapshot.runStartIndex
+        || hasSelectedProgress(snapshot)
+    );
+}
+
+function getChapterStartIndex(chapter) {
+    const startIndex = quizSteps.findIndex((step) => step.chapter === chapter);
+    return startIndex < 0 ? 0 : startIndex;
+}
+
+function getChapterForIndex(index) {
+    return quizSteps[clampStepIndex(index, 0)]?.chapter ?? quizSteps[0]?.chapter ?? "Mission";
+}
+
+function confirmMissionReplacement(startIndex, reason = "chapter") {
+    const snapshot = getStatusSnapshot();
+
+    if (!hasInProgressMission(snapshot)) {
+        return true;
+    }
+
+    const currentChapter = getChapterForIndex(snapshot.currentIndex);
+    const targetChapter = getChapterForIndex(startIndex);
+
+    if (reason === "restart") {
+        return window.confirm(`Restart the mission from the beginning? Your current in-progress progress from ${currentChapter} will be replaced.`);
+    }
+
+    if (reason === "chapter" && currentChapter === targetChapter) {
+        return window.confirm(`Restart ${targetChapter} from the beginning? Your current in-progress progress will be replaced.`);
+    }
+
+    return window.confirm(`Open ${targetChapter} instead? Your current in-progress progress from ${currentChapter} will be replaced.`);
 }
 
 function getHeaderViewMeta() {
@@ -792,6 +1163,361 @@ function getCorrectOptionIds(step) {
     return step.options.filter((option) => option.correct).map((option) => option.id);
 }
 
+function formatLabelList(labels) {
+    if (labels.length <= 1) {
+        return labels[0] ?? "";
+    }
+
+    if (labels.length === 2) {
+        return `${labels[0]} and ${labels[1]}`;
+    }
+
+    return `${labels.slice(0, -1).join(", ")}, and ${labels[labels.length - 1]}`;
+}
+
+function getChoiceLayout(step) {
+    if (!step) {
+        return "stacked";
+    }
+
+    if (step.choiceLayout) {
+        return step.choiceLayout;
+    }
+
+    if (step.selectionMode === "multi") {
+        return "grid";
+    }
+
+    return step.sceneTheme === "fire" ? "visual" : "stacked";
+}
+
+function splitOptionLabel(label) {
+    const value = String(label ?? "").trim();
+    const parts = value.split("—");
+
+    if (parts.length > 1) {
+        return {
+            kicker: parts[0].trim(),
+            main: parts.slice(1).join("—").trim()
+        };
+    }
+
+    return {
+        kicker: "",
+        main: value
+    };
+}
+
+function getSceneBadgeIcon(tone) {
+    switch (tone) {
+        case "success":
+            return "★";
+        case "danger":
+            return "✕";
+        case "warning":
+        default:
+            return "!";
+    }
+}
+
+function getSceneBadge(step, feedback) {
+    const fallback = feedback
+        ? (feedback.isCorrect
+            ? {
+                tone: "success",
+                title: "Safe move",
+                delta: "+1 Badge",
+                copy: "You picked the safer response for this scene."
+            }
+            : {
+                tone: "danger",
+                title: "Trap choice",
+                delta: "-1 Badge",
+                copy: "Review the scene again and watch for the hazard clues."
+            })
+        : {
+            tone: step?.sceneTheme === "fire" ? "danger" : "warning",
+            title: "Mission focus",
+            delta: step?.chapter ?? "",
+            copy: step?.guide ?? ""
+        };
+
+    const source = feedback
+        ? (feedback.isCorrect ? step?.successBadge : step?.failureBadge)
+        : step?.badge;
+
+    const tone = source?.tone ?? fallback.tone;
+
+    return {
+        tone,
+        title: source?.title ?? fallback.title,
+        delta: source?.delta ?? fallback.delta,
+        copy: source?.copy ?? fallback.copy,
+        icon: source?.icon ?? getSceneBadgeIcon(tone)
+    };
+}
+
+function getChapterDisplayParts(chapter) {
+    const value = String(chapter ?? "").trim();
+    const match = /^(Chapter)\s+(\d+)$/i.exec(value);
+
+    if (!match) {
+        return {
+            raw: value,
+            word: value.toUpperCase(),
+            number: ""
+        };
+    }
+
+    return {
+        raw: value,
+        word: match[1].toUpperCase(),
+        number: match[2]
+    };
+}
+
+function getMissionPrefabKey(step) {
+    if (!step) {
+        return "multiple-choice";
+    }
+
+    if (step.selectionMode === "multi") {
+        return "tag-select";
+    }
+
+    if (getChoiceLayout(step) === "visual") {
+        return "icon-multiple-choice";
+    }
+
+    return "multiple-choice";
+}
+
+function getMissionPrefab(step) {
+    if (!step) {
+        return null;
+    }
+
+    const preset = missionPrefabPresets[getMissionPrefabKey(step)];
+
+    if (!preset) {
+        return null;
+    }
+
+    return {
+        ...preset,
+        stageTitle: step.title,
+        stageSummary: `${step.chapter} · ${step.answerModeLabel}`,
+        sceneLabel: step.chapterTitle
+    };
+}
+
+function renderMissionPrefabMarkers(markers = []) {
+    return markers.map((marker, index) => `
+        <span
+            class="mission-prefab-marker is-${marker.tone || "info"}"
+            style="left:${marker.x}%; top:${marker.y}%; --marker-index:${index};"
+            title="${marker.text}"
+        >
+            <strong>${marker.label || String.fromCharCode(65 + index)}</strong>
+            <span class="mission-prefab-marker-glyph">${marker.glyph || marker.symbol || "•"}</span>
+            <span class="mission-prefab-marker-text">${marker.text || ""}</span>
+        </span>
+    `).join("");
+}
+
+function renderMissionPrefabSteps(steps = []) {
+    return steps.map((item, index) => `
+        <li class="mission-prefab-step-card is-${item.tone || "info"}">
+            <span class="mission-prefab-step-index">${index + 1}</span>
+            <span class="mission-prefab-step-icon" aria-hidden="true">${item.glyph || item.icon || "•"}</span>
+            <span class="mission-prefab-step-copy">
+                <strong>${item.title || `Step ${index + 1}`}</strong>
+                <span>${item.text || ""}</span>
+            </span>
+        </li>
+    `).join("");
+}
+
+function renderMissionPrefabPanel(step) {
+    const prefab = getMissionPrefab(step);
+
+    if (!prefab) {
+        return "";
+    }
+
+    return `
+        <section class="mission-prefab-card card-surface theme-${step.sceneTheme}">
+            <div class="mission-prefab-head">
+                <div class="mission-prefab-pill-row">
+                    <span class="mission-prefab-pill">${prefab.pill}</span>
+                    <span class="mission-prefab-example-pill">${prefab.exampleLabel}</span>
+                </div>
+                <span class="mission-prefab-discovery">${prefab.sceneStatus}</span>
+            </div>
+
+            <div class="mission-prefab-copy">
+                <h2>${prefab.title}</h2>
+                <p>${prefab.body}</p>
+            </div>
+
+            <section class="mission-prefab-example">
+                <div class="mission-prefab-level-head">
+                    <strong>${prefab.stageTitle}</strong>
+                    <p>${prefab.stageSummary}</p>
+                </div>
+
+                <div class="mission-prefab-grid">
+                <div class="mission-prefab-stage-shell">
+                    <div class="mission-prefab-stage-header">
+                        <span>${prefab.sceneLabel}</span>
+                        <small>${step.answerModeLabel}</small>
+                    </div>
+
+                    <div class="mission-prefab-stage-wrap">
+                        <div class="scene-visual mission-prefab-stage">
+                            <img src="${step.image}" alt="${prefab.sceneLabel}" />
+                        </div>
+                        <div class="mission-prefab-stage-markers" aria-hidden="true">
+                            ${renderMissionPrefabMarkers(prefab.markers)}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-prefab-step-panel">
+                    <div class="mission-prefab-step-panel-head">
+                        <strong>Quick guide</strong>
+                        <span>${prefab.steps.length} steps</span>
+                    </div>
+                    <ol class="mission-prefab-step-list" aria-label="Hazeyelert mission prefab steps">
+                        ${renderMissionPrefabSteps(prefab.steps)}
+                    </ol>
+                </div>
+                </div>
+
+                <p class="mission-prefab-note">
+                    <span class="mission-prefab-note-icon" aria-hidden="true">ⓘ</span>
+                    <span>${prefab.note}</span>
+                </p>
+            </section>
+        </section>
+    `;
+}
+
+function getOptionVisual(step, option, index) {
+    const visuals = {
+        "image-a": {
+            glyph: "🧎",
+            title: "Stay low",
+            caption: "Safer air is closer to the floor.",
+            detail: "Move carefully under the smoke instead of standing tall in it.",
+            tone: "safe"
+        },
+        "image-b": {
+            glyph: "🏃",
+            title: "Run through smoke",
+            caption: "Fast is not always safe.",
+            detail: "Charging upright through thick smoke cuts visibility and breathing space.",
+            tone: "danger"
+        },
+        "image-c": {
+            glyph: "🧍",
+            title: "Wait in place",
+            caption: "Standing still gives smoke time.",
+            detail: "Waiting for smoke to clear leaves you in the hazard instead of moving out of it.",
+            tone: "danger"
+        },
+        "risk-map-a": {
+            glyph: "🧱",
+            title: "Safer wall route",
+            caption: "Walls are safer than open exposure.",
+            detail: "Open hallway = risky, near walls = safer, ceiling cracks = dangerous.",
+            tone: "safe"
+        },
+        "risk-map-b": {
+            glyph: "🚪",
+            title: "Wrong hallway read",
+            caption: "This one treats the hallway as too safe.",
+            detail: "Open hallway is exposed, not the safest place to stay when objects may fall.",
+            tone: "danger"
+        },
+        "risk-map-c": {
+            glyph: "⚠️",
+            title: "Unsafe crack call",
+            caption: "Never trust ceiling cracks.",
+            detail: "This option wrongly labels the crack zone as safe.",
+            tone: "danger"
+        },
+        "order-2-1-3": {
+            glyph: "🧭",
+            title: "Assess, then move",
+            caption: "Calm order keeps you alive.",
+            detail: "Check the room briefly, move toward safer air or an exit, and never panic-run.",
+            tone: "safe"
+        },
+        "order-1-2-3": {
+            glyph: "➡️",
+            title: "Move too soon",
+            caption: "Skipping the room check is risky.",
+            detail: "You need a quick read of the environment before committing to a route.",
+            tone: "danger"
+        },
+        "order-3-1-2": {
+            glyph: "😱",
+            title: "Panic first",
+            caption: "Panic cannot lead the route.",
+            detail: "Random movement is exactly how danger gets worse in smoke and fire.",
+            tone: "danger"
+        },
+        "observe-surroundings": {
+            glyph: "👀",
+            title: "Observe",
+            caption: "Read the space before moving.",
+            detail: "Slow down and observe your surroundings.",
+            tone: "safe"
+        },
+        "ignore-dangers": {
+            glyph: "🙈",
+            title: "Ignore it",
+            caption: "This keeps the hazard alive.",
+            detail: "Ignoring small dangers lets them stack into bigger ones.",
+            tone: "danger"
+        },
+        "check-before-using": {
+            glyph: "🔎",
+            title: "Check first",
+            caption: "Inspect before you use.",
+            detail: "Check things before using them.",
+            tone: "safe"
+        },
+        "stay-uncomfortable": {
+            glyph: "⚠️",
+            title: "Stay put",
+            caption: "Discomfort is a warning sign.",
+            detail: "Staying in uncomfortable situations keeps you inside the risk zone.",
+            tone: "danger"
+        },
+        "move-away-risk": {
+            glyph: "↩️",
+            title: "Move away",
+            caption: "Distance is protection.",
+            detail: "Move away from anything risky.",
+            tone: "safe"
+        }
+    };
+
+    if (visuals[option.id]) {
+        return visuals[option.id];
+    }
+
+    return {
+        glyph: step.selectionMode === "multi" ? ["🧠", "⚠️", "🔍", "🛑", "↪️"][index] ?? "•" : ["A", "B", "C", "D", "E"][index] ?? "•",
+        title: splitOptionLabel(option.label).main,
+        caption: splitOptionLabel(option.label).kicker || step.answerModeLabel,
+        detail: "",
+        tone: option.correct ? "safe" : "neutral"
+    };
+}
+
 function getFeedback(step) {
     const correctIds = getCorrectOptionIds(step);
     const selectedIds = [...state.selected];
@@ -801,16 +1527,51 @@ function getFeedback(step) {
 
     const correctLabels = step.options
         .filter((option) => option.correct)
-        .map((option) => option.label)
-        .join(step.selectionMode === "multi" ? " and " : "");
+        .map((option) => option.label);
 
     return {
         isCorrect,
         title: isCorrect ? "Correct answer" : "Safer response",
         copy: isCorrect
-            ? `Nice work. ${correctLabels}`
-            : `The safer move is: ${correctLabels}`
+            ? `Nice work. ${formatLabelList(correctLabels)}`
+            : `The safer move is: ${formatLabelList(correctLabels)}`
     };
+}
+
+function getScenarioLead(step) {
+    switch (step?.sceneTheme) {
+        case "wire":
+            return "Slow down, check the risk, and leave the risky move for last.";
+        case "noise":
+            return "Protect yourself from the blast of sound before you do anything else.";
+        case "fire":
+            return "Smoke changes the room fast, so the first calm move matters most.";
+        case "spill":
+        default:
+            return "Scan the scene first and lock onto the hazard before you move.";
+    }
+}
+
+function getMultiSelectSummary(step) {
+    if (step?.selectionMode !== "multi") {
+        return "";
+    }
+
+    if (state.selected.size === 0) {
+        return "Select every safe action";
+    }
+
+    return `${state.selected.size} selected`;
+}
+
+function getMultiSelectSubmitLabel() {
+    const count = state.selected.size;
+
+    if (count === 0) {
+        return "Submit selected actions";
+    }
+
+    return `Submit ${count} selected ${count === 1 ? "action" : "actions"}`;
 }
 
 function updateAnswerHistory(step, feedback) {
@@ -887,15 +1648,19 @@ function goNext() {
     } else {
         state.currentView = "result";
         state.completedRun = true;
-        playSoundEffect("success");
+        playSoundEffect(getMissionOutcome().isComplete ? "success" : "warning");
     }
 
     syncStoredProgress();
     render();
 }
 
-function startQuiz(startIndex = 0) {
+function startQuiz(startIndex = 0, options = {}) {
     const safeStartIndex = clampStepIndex(startIndex, 0);
+
+    if (options.confirmReplacement && !confirmMissionReplacement(safeStartIndex, options.reason)) {
+        return false;
+    }
 
     resetMissionState();
     state.runStartIndex = safeStartIndex;
@@ -903,6 +1668,8 @@ function startQuiz(startIndex = 0) {
     state.currentView = "quiz";
     syncStoredProgress();
     render();
+
+    return true;
 }
 
 function continueMission() {
@@ -924,7 +1691,7 @@ function continueMission() {
 }
 
 function restartQuiz() {
-    startQuiz(0);
+    startQuiz(0, { confirmReplacement: true, reason: "restart" });
 }
 
 function restoreProgressSnapshot(snapshot, targetView) {
@@ -946,6 +1713,12 @@ function enterDashboard() {
 }
 
 function clearMissionProgress() {
+    const shouldClear = window.confirm("Clear your saved mission progress, score, and chapter history on this device?");
+
+    if (!shouldClear) {
+        return;
+    }
+
     resetMissionState();
     state.currentView = "settings";
     syncStoredProgress();
@@ -953,6 +1726,12 @@ function clearMissionProgress() {
 }
 
 function replayIntro() {
+    const shouldReplay = window.confirm("Replay the intro and reset your current mission progress on this device?");
+
+    if (!shouldReplay) {
+        return;
+    }
+
     resetMissionState();
     state.introSeen = false;
     state.currentView = "intro";
@@ -985,8 +1764,8 @@ function goProfile() {
 }
 
 function launchChapter(chapter) {
-    const startIndex = quizSteps.findIndex((step) => step.chapter === chapter);
-    startQuiz(startIndex < 0 ? 0 : startIndex);
+    const startIndex = getChapterStartIndex(chapter);
+    startQuiz(startIndex, { confirmReplacement: true, reason: "chapter" });
 }
 
 function renderIntro() {
@@ -1037,9 +1816,11 @@ function renderHome() {
         <section class="screen-stack home-screen">
             <section class="home-feature card-surface">
                 <div class="home-feature-copy">
-                    <span class="eyebrow-pill">Today’s focus route</span>
-                    <h1>Hazeyelert</h1>
-                    <p>${meta.helper}</p>
+                    <div class="home-feature-copy-body">
+                        <span class="eyebrow-pill">Today’s focus route</span>
+                        <h1>Hazeyelert</h1>
+                        <p>${meta.helper}</p>
+                    </div>
                     <div class="hero-actions">
                         <button type="button" class="primary-button" data-action="continue-mission">${meta.label}</button>
                         <button type="button" class="secondary-button" data-action="open-mission-screen">Mission board</button>
@@ -1194,7 +1975,7 @@ function renderProfile() {
                 <p>Track how your hazard instincts are improving across every chapter.</p>
                 <div class="hero-metrics profile-metrics">
                     <div class="metric-chip">
-                        <small>Best streak</small>
+                        <small>Current streak</small>
                         <strong>${state.streak}</strong>
                     </div>
                     <div class="metric-chip">
@@ -1243,12 +2024,20 @@ function renderProfile() {
 }
 
 function renderOptions(step) {
-    return step.options.map((option) => {
+    const layout = getChoiceLayout(step);
+
+    return step.options.map((option, index) => {
         const isSelected = state.selected.has(option.id);
         const feedback = state.answered ? getFeedback(step) : null;
         const shouldRevealCorrect = state.answered && option.correct;
         const selectedWrong = state.answered && isSelected && !option.correct && !feedback.isCorrect;
-        const classes = ["option-card"];
+        const classes = ["option-card", `option-card-${layout}`];
+        const singleChoiceBadge = String.fromCharCode(65 + index);
+        const display = splitOptionLabel(option.label);
+        const visual = getOptionVisual(step, option, index);
+        const badgeText = step.selectionMode === "multi"
+            ? (display.kicker || String(index + 1))
+            : (layout === "visual" ? (display.kicker || singleChoiceBadge) : singleChoiceBadge);
 
         if (isSelected) {
             classes.push("is-selected");
@@ -1268,10 +2057,33 @@ function renderOptions(step) {
                 class="${classes.join(" ")}"
                 data-action="${action}"
                 data-option="${option.id}"
+                aria-pressed="${isSelected ? "true" : "false"}"
                 ${state.answered ? "disabled" : ""}
             >
-                <span class="option-badge">${step.selectionMode === "multi" ? (isSelected ? "✓" : "+") : "→"}</span>
-                <span class="option-label">${option.label}</span>
+                ${layout === "visual" ? `
+                    <span class="option-visual-top">
+                        <span class="option-art option-art-${visual.tone}"><span class="option-art-glyph">${visual.glyph}</span></span>
+                        ${(shouldRevealCorrect || selectedWrong) ? `<span class="option-state-mark">${shouldRevealCorrect ? "✓" : "✕"}</span>` : ""}
+                    </span>
+                    <span class="option-visual-copy">
+                        <strong>${visual.title}</strong>
+                        <small>${visual.caption}</small>
+                        <span class="option-detail">${visual.detail || display.main}</span>
+                    </span>
+                ` : layout === "grid" ? `
+                    <span class="option-grid-top">
+                        <span class="option-art option-art-${visual.tone}"><span class="option-art-glyph">${isSelected || shouldRevealCorrect ? "✓" : visual.glyph}</span></span>
+                        ${(isSelected && !state.answered) ? `<span class="option-grid-tag">Selected</span>` : ""}
+                    </span>
+                    <span class="option-grid-copy">
+                        <strong>${visual.title}</strong>
+                        <small>${visual.caption}</small>
+                        <span class="option-detail">${visual.detail || display.main || option.label}</span>
+                    </span>
+                ` : `
+                    <span class="option-badge ${step.selectionMode === "multi" ? "option-badge-check" : "option-badge-letter"}">${badgeText}</span>
+                    <span class="option-label">${option.label}</span>
+                `}
             </button>
         `;
     }).join("");
@@ -1280,122 +2092,150 @@ function renderOptions(step) {
 function renderQuiz() {
     const step = getCurrentStep();
     const feedback = state.answered ? getFeedback(step) : null;
+    const multiSelectSummary = getMultiSelectSummary(step);
+    const layout = getChoiceLayout(step);
+    const requiredSelections = getCorrectOptionIds(step).length;
+    const badge = getSceneBadge(step, feedback);
 
     return `
-        <section class="screen-stack quiz-screen">
-            <section class="quiz-topbar">
-                <button type="button" class="ghost-button" data-action="open-mission-screen">Back</button>
-                <div class="quiz-topbar-copy">
-                    <div class="quiz-chapter-label">${step.chapter}</div>
-                    <h1>${step.chapterTitle}</h1>
-                </div>
-                <div class="metric-chip compact-chip">
-                    <small>Scene</small>
+        <section class="screen-stack quiz-screen quiz-screen-clean quiz-layout-${layout}">
+            <section class="mission-controls-row mission-controls-clean">
+                <button type="button" class="ghost-button mission-back-button" data-action="open-mission-screen">Back</button>
+                <div class="scene-counter-chip">
+                    <small>Question</small>
                     <strong>${getRunPositionLabel()}</strong>
                 </div>
             </section>
 
-            <section class="scene-hero card-surface theme-${step.sceneTheme}">
-                <div class="scene-copy">
-                    <span class="eyebrow-pill subtle-pill">Scenario</span>
-                    <h2>${step.title}</h2>
-                    <p>${step.story}</p>
-                </div>
-                <div class="scene-visual">
-                    <img src="${step.image}" alt="${step.chapterTitle}" />
-                </div>
-            </section>
+            <section class="mission-level-shell card-surface mission-tone-${step.sceneTheme}">
+                <section class="mission-stage-card">
+                    <div class="mission-stage-image-wrap">
+                        <img src="${step.image}" alt="${step.chapterTitle}" class="mission-stage-image" />
 
-            <section class="story-card card-surface">
-                <div class="section-heading-row compact-row">
-                    <h2>Read the scene</h2>
-                    <span class="eyebrow-pill subtle-pill">Observe first</span>
-                </div>
-                <p>${step.story}</p>
-            </section>
+                        <div class="mission-stage-overlay mission-stage-toprow">
+                            <div class="mission-stage-chapter-block">
+                                <span class="mission-stage-crest" aria-hidden="true"><img src="assets/logo-eye.svg" alt="" /></span>
+                                <div class="mission-stage-heading">
+                                    <span class="mission-stage-chapter quiz-chapter-label">${step.chapter}</span>
+                                    <strong>${step.title}</strong>
+                                </div>
+                            </div>
 
-            <section class="quiz-card card-surface">
-                <div class="section-heading-row compact-row">
-                    <h2>${step.question}</h2>
-                    <span class="eyebrow-pill subtle-pill">${step.selectionMode === "multi" ? "Choose all that apply" : "Choose one"}</span>
-                </div>
-                <div class="option-list">${renderOptions(step)}</div>
-                ${step.selectionMode === "multi" && !state.answered ? `
-                    <button type="button" class="primary-button wide-button" data-action="submit-multi" ${state.selected.size === 0 ? "disabled" : ""}>Submit choices</button>
-                ` : ""}
-                ${feedback ? `
-                    <div class="feedback-panel ${feedback.isCorrect ? "feedback-good" : "feedback-warning"}">
-                        <strong>${feedback.title}</strong>
-                        <p>${feedback.copy}</p>
-                        <button type="button" class="primary-button wide-button" data-action="next-step">
-                            ${state.currentIndex === quizSteps.length - 1 ? "View results" : "Next question"}
-                        </button>
+                            <aside class="mission-stage-badge badge-tone-${badge.tone}">
+                                <span class="mission-stage-badge-icon" aria-hidden="true">${badge.icon}</span>
+                                <div class="mission-stage-badge-copy">
+                                    <strong>${badge.title}</strong>
+                                    ${badge.delta ? `<span>${badge.delta}</span>` : ""}
+                                    <small>${badge.copy}</small>
+                                </div>
+                            </aside>
+                        </div>
+
+                        ${step.speechBubble ? `
+                            <div class="mission-stage-overlay mission-stage-speech-wrap">
+                                <div class="mission-speech-bubble mission-stage-speech">${step.speechBubble}</div>
+                            </div>
+                        ` : ""}
+
+                        <div class="mission-stage-overlay mission-stage-footer">
+                            <p>${step.chapterTitle}</p>
+                        </div>
                     </div>
-                ` : ""}
-            </section>
+                </section>
 
-            <section class="guide-panel card-surface">
-                <div class="guide-copy">
-                    <span class="eyebrow-pill subtle-pill">Guide note</span>
-                    <h2>Pet-eye prompt</h2>
-                    <p>${step.guide}</p>
-                </div>
-                <img src="assets/pet-guide.svg" alt="Mascot guide" class="guide-mascot" />
+                <section class="mission-scene-details story-card guide-panel">
+                    <div class="mission-scene-details-copy">
+                        <p>${step.story}</p>
+                    </div>
+                </section>
+
+                <section class="mission-question-card quiz-card mission-quiz-panel mission-quiz-panel-${layout}">
+                    <div class="mission-quiz-heading">
+                        <div class="mission-quiz-copy">
+                            <p class="mission-quiz-kicker">Quiz (${step.answerModeLabel})</p>
+                            <h2>${step.question}</h2>
+                        </div>
+                        <div class="mission-quiz-timer" aria-hidden="true">
+                            <img src="assets/icon-timer.svg" alt="" />
+                        </div>
+                    </div>
+
+                    ${step.selectionMode === "multi" ? `
+                        <div class="quiz-selection-bar mission-selection-bar ${state.selected.size > 0 ? "is-active" : ""} ${state.selected.size === requiredSelections ? "is-complete" : ""}">
+                            <strong>${multiSelectSummary}</strong>
+                            <span>Choose ${requiredSelections} safe ${requiredSelections === 1 ? "answer" : "answers"}.</span>
+                        </div>
+                    ` : ""}
+
+                    <div class="option-list option-list-${layout}">${renderOptions(step)}</div>
+                    ${step.selectionMode === "multi" && !state.answered ? `
+                        <button type="button" class="primary-button wide-button ${state.selected.size > 0 ? "is-ready" : ""}" data-action="submit-multi" ${state.selected.size === 0 ? "disabled" : ""}>${getMultiSelectSubmitLabel()}</button>
+                    ` : ""}
+                    ${feedback ? `
+                        <div class="feedback-panel ${feedback.isCorrect ? "feedback-good" : "feedback-warning"}">
+                            <strong>${feedback.title}</strong>
+                            <p>${feedback.copy}</p>
+                            <button type="button" class="primary-button wide-button" data-action="next-step">
+                                ${state.currentIndex === quizSteps.length - 1 ? "View results" : "Next question"}
+                            </button>
+                        </div>
+                    ` : ""}
+                </section>
             </section>
         </section>
     `;
 }
 
 function getRecommendationCopy() {
-    const total = getRunTotal();
-    const percent = Math.round((state.score / total) * 100);
-
-    if (percent === 100) {
-        return "You handled every scene with the safest move. That is a full clear — no dramatic music needed, but deserved.";
-    }
-
-    if (percent >= 67) {
-        return "Solid instincts. Review the missed scenes once more and your response timing will get even sharper.";
-    }
-
-    return "You’ve got a useful baseline now. Replay the mission and focus on the first action that protects people around you.";
+    return getMissionOutcome().recommendation;
 }
 
 function renderResults() {
     const chapters = getChapterSummaries();
+    const outcome = getMissionOutcome();
 
     return `
-        <section class="screen-stack result-screen">
-            <section class="card-surface result-hero">
-                <span class="eyebrow-pill">Mission recap</span>
-                <h1>Results</h1>
-                <div class="result-score-row">
-                    <div>
-                        <small>Final score</small>
-                        <strong>${state.score}/${getRunTotal()}</strong>
-                    </div>
-                    <div>
-                        <small>Streak finish</small>
-                        <strong>${state.streak}</strong>
-                    </div>
+        <section class="screen-stack result-screen result-screen-${outcome.status}">
+            <section class="card-surface result-hero result-hero-${outcome.status}">
+                <div class="result-state-head">
+                    <span class="eyebrow-pill result-state-pill">${outcome.eyebrow}</span>
+                    <span class="result-state-icon" aria-hidden="true">${outcome.icon}</span>
                 </div>
-                <p>${getRecommendationCopy()}</p>
+                <h1>Results</h1>
+                <h2 class="result-state-heading">${outcome.heading}</h2>
+                <p>${outcome.summary}</p>
+                <div class="result-state-grid">
+                    <article class="mini-panel result-state-panel">
+                        <small>Final score</small>
+                        <strong>${outcome.score}/${outcome.total}</strong>
+                        <p>${outcome.percent}% safe calls</p>
+                    </article>
+                    <article class="mini-panel result-state-panel">
+                        <small>Chapter clear</small>
+                        <strong>${outcome.chaptersCleared}/${outcome.chapterCount}</strong>
+                        <p>${outcome.chaptersCleared === outcome.chapterCount ? "All chapters cleared" : "Not every chapter was cleared"}</p>
+                    </article>
+                </div>
+                <p class="result-state-copy">${getRecommendationCopy()}</p>
                 <div class="hero-actions">
-                    <button type="button" class="primary-button" data-action="restart-quiz">Restart mission</button>
-                    <button type="button" class="secondary-button" data-action="go-home">Back home</button>
+                    <button type="button" class="primary-button" data-action="${outcome.primaryAction.action}">${outcome.primaryAction.label}</button>
+                    <button type="button" class="secondary-button" data-action="${outcome.secondaryAction.action}">${outcome.secondaryAction.label}</button>
                 </div>
             </section>
 
             <section class="card-surface recap-card">
                 <div class="section-heading-row compact-row">
                     <h2>Chapter recap</h2>
-                    <span class="eyebrow-pill subtle-pill">Performance map</span>
+                    <span class="eyebrow-pill subtle-pill">${outcome.isComplete ? "Safe-call map" : "Retry map"}</span>
                 </div>
-                <div class="progress-grid">
+                <div class="recap-grid">
                     ${chapters.map((chapter) => `
-                        <article class="mini-panel compact-panel">
-                            <small>${chapter.name}</small>
-                            <strong>${chapter.status}</strong>
+                        <article class="mini-panel compact-panel recap-panel">
+                            <div class="compact-row recap-panel-head">
+                                <small>${chapter.name}</small>
+                                <span class="status-tag">${chapter.status}</span>
+                            </div>
+                            <strong>${chapter.title}</strong>
                             <p>${chapter.completionLabel}</p>
                         </article>
                     `).join("")}
@@ -1418,16 +2258,6 @@ function renderSettingsPage() {
                 </div>
                 <h1>Settings</h1>
                 <p>Manage saved progress, onboarding, and quick route shortcuts without leaving the Hazeyelert shell.</p>
-            </section>
-
-            <section class="card-surface settings-helper-card">
-                <div class="modal-helper-note settings-helper-note">
-                    <span class="helper-note-icon" aria-hidden="true">${compassIconMarkup}</span>
-                    <div>
-                        <strong>Hazeyelert shell controls</strong>
-                        <p>Quick access to saves, sound, onboarding, and chapter routing for your offline safety mission.</p>
-                    </div>
-                </div>
             </section>
 
             <section class="settings-summary-strip">
@@ -1484,8 +2314,11 @@ function updateChrome() {
     });
 }
 
-function render() {
+function render(options = {}) {
     let markup = "";
+
+    const previousView = lastRenderedView;
+    const previousQuizIndex = lastRenderedQuizIndex;
 
     if (state.currentView === "intro") {
         markup = renderIntro();
@@ -1506,9 +2339,24 @@ function render() {
     mainContent.innerHTML = markup;
     updateChrome();
 
-    animateViewEntrance();
+    const isQuizView = state.currentView === "quiz";
+    const quizStepChanged = isQuizView && previousQuizIndex !== null && previousQuizIndex !== state.currentIndex;
+    const viewChanged = previousView !== null && previousView !== state.currentView;
+    const isFirstRender = previousView === null;
+    const shouldTreatAsTransition = options.forceTransition === true || isFirstRender || viewChanged || quizStepChanged;
+    const shouldAnimateEntrance = options.animateEntrance ?? shouldTreatAsTransition;
+    const shouldScrollToTop = options.scrollToTop ?? shouldTreatAsTransition;
 
-    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    if (shouldAnimateEntrance) {
+        animateViewEntrance();
+    }
+
+    if (shouldScrollToTop) {
+        window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    }
+
+    lastRenderedView = state.currentView;
+    lastRenderedQuizIndex = isQuizView ? state.currentIndex : null;
 }
 
 function handleAction(actionTarget) {
@@ -1616,3 +2464,6 @@ document.addEventListener("click", (event) => {
 hydrateState();
 bindSoundAutoplayUnlock();
 render();
+window.requestAnimationFrame(() => {
+    hideStartupSplash();
+});

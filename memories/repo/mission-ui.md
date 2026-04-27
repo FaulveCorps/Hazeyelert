@@ -1,0 +1,7 @@
+- Mission/quiz compactness is controlled in `wwwroot/styles.css`.
+- `app-shell.immersive-view` must not keep bottom-nav padding, or quiz screens gain phantom vertical scroll.
+- Compact mission layout for phones is handled by `@media (max-width: 430px)` and extra-tight rules in `@media (max-width: 430px) and (max-height: 760px)`.
+- Hazeyelert mission rounds now use a simplified question-first layout in `renderQuiz()` inside `wwwroot/app.js`: compact chapter header, mission focus strip, single question card, and collapsible scene details while preserving the existing question/answer data.
+- UI verification still expects visible chapter, story, quiz, and guide regions on mission pages, so the simplified layout keeps those verification hooks while avoiding the old stacked-card clutter.
+- Result-state redesigns must keep a visible `Results` heading and `Chapter recap` heading because `scripts/check-ui-content.mjs` asserts those exact labels.
+- UI regression check: `npm run verify:ui`.

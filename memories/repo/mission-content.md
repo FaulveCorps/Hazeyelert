@@ -1,0 +1,9 @@
+- Mission/chapter content source of truth: `wwwroot/app.js` (`quizSteps`, `categories`, `profileBadges`, intro copy).
+- Web UI regression check: run `npm run verify:ui` from repo root.
+- Current mission flow: 2 chapters, 7 total quiz steps, with one multi-select checkpoint in Chapter 1.
+- Client mission concept uses a full illustrated scene background with the chapter label large at top-left and a badge/feedback card at top-right.
+- Story copy sits in a large rounded gray panel below the scene; quiz content sits in a second rounded gray panel directly beneath it.
+- Chapter 1 concept: single-choice text buttons in large stacked yellow/gray pills plus a big anchored next/confirm button.
+- Chapter 2 concept: image-based choices arranged horizontally with strong visual answers, timer icon, danger/trap feedback, and speech-bubble urgency.
+- Chapter 3 concept: multi-select equipment layout in a 2-column grid with icon+label buttons, visible selected checkmarks, and centered submit button.
+- Visual tone is more illustrated, dramatic, and game-like than the current web build; future mission screens should prioritize scene art, chunkier cards, clearer answer states, and top-right badge feedback.

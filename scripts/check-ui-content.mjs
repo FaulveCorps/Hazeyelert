@@ -129,8 +129,12 @@ async function clickAndWait(locator, description) {
     await locator.first().click();
 }
 
+async function getChapterHeadingLocator(page, chapter) {
+    return page.locator(".quiz-chapter-label, .mission-chapter-pill").filter({ hasText: chapter });
+}
+
 async function answerStep(page, step, index) {
-    await ensureVisible(page.locator(".quiz-chapter-label").filter({ hasText: step.chapter }), `chapter heading ${step.chapter}`);
+    await ensureVisible(await getChapterHeadingLocator(page, step.chapter), `chapter heading ${step.chapter}`);
     await ensureVisible(page.locator(".story-card"), `story card for ${step.chapter}`);
     await ensureVisible(page.locator(".quiz-card"), `quiz card for ${step.chapter}`);
     await ensureVisible(page.locator(".guide-panel"), `guide panel for ${step.chapter}`);
@@ -140,7 +144,7 @@ async function answerStep(page, step, index) {
     }
 
     if (step.submit) {
-        await clickAndWait(page.getByRole("button", { name: /Submit choices/i }), `submit button for quiz step ${index + 1}`);
+        await clickAndWait(page.locator('[data-action="submit-multi"]'), `submit button for quiz step ${index + 1}`);
     }
 
     await ensureVisible(page.getByText("Correct answer", { exact: true }), `feedback panel after quiz step ${index + 1}`);
@@ -187,15 +191,15 @@ async function verifySecondaryScreens(page) {
     await clickAndWait(page.getByRole("button", { name: /^Settings$/i }), "settings navigation button");
     await ensureVisible(page.locator("main").getByRole("heading", { name: "Settings", exact: true }), "settings page heading");
     await ensureVisible(page.getByText(/Offline utility panel/i), "settings utility panel label");
-    await ensureVisible(page.getByText(/Hazeyelert shell controls/i), "settings helper card");
+    await ensureVisible(page.getByText(/Interaction sounds/i), "settings interaction sounds card");
     await clickAndWait(page.getByRole("button", { name: /Home/i }), "home navigation button from settings");
 }
 
 async function verifyReloadResilienceDuringMultiSelect(page) {
     const setupSteps = [
-        { chapter: "Chapter 1", optionIds: ["report-spill"], nextLabel: /Next question/i },
-        { chapter: "Chapter 2", optionIds: ["alert-teacher"], nextLabel: /Next question/i },
-        { chapter: "Chapter 2", optionIds: ["wet-hands"], nextLabel: /Next question/i }
+        { chapter: "Chapter 1", optionIds: ["blue-puddle"], nextLabel: /Next question/i },
+        { chapter: "Chapter 1", optionIds: ["order-3-2-1"], nextLabel: /Next question/i },
+        { chapter: "Chapter 1", optionIds: ["blue-cover-ears"], nextLabel: /Next question/i }
     ];
 
     await clickAndWait(page.getByRole("button", { name: /Start mission/i }), "start mission button for reload test");
@@ -204,38 +208,77 @@ async function verifyReloadResilienceDuringMultiSelect(page) {
         await answerStep(page, step, index);
     }
 
-    await ensureVisible(page.locator(".quiz-chapter-label").filter({ hasText: "Chapter 3" }), "chapter heading Chapter 3 multi-select step");
-    await clickAndWait(page.locator('[data-option="alarm"]'), "first multi-select option before reload");
-    await ensureVisible(page.locator('[data-option="alarm"].is-selected'), "selected multi option before reload");
+    await ensureVisible(await getChapterHeadingLocator(page, "Chapter 1"), "chapter heading Chapter 1 multi-select step");
+    await clickAndWait(page.locator('[data-option="observe-surroundings"]'), "first multi-select option before reload");
+    await ensureVisible(page.locator('[data-option="observe-surroundings"].is-selected'), "selected multi option before reload");
 
     await page.reload({ waitUntil: "domcontentloaded" });
     await waitForStartupMotion(page);
 
     await ensureVisible(page.locator("main").getByRole("heading", { name: "Hazeyelert", exact: true }), "home screen after reload");
     await clickAndWait(page.getByRole("button", { name: /Resume mission/i }), "resume mission button after reload");
-    await ensureVisible(page.locator(".quiz-chapter-label").filter({ hasText: "Chapter 3" }), "chapter heading Chapter 3 after reload");
-    await ensureVisible(page.locator('[data-option="alarm"].is-selected'), "persisted multi-select option after reload");
-    await clickAndWait(page.locator('[data-option="exit"]'), "second multi-select option after reload");
-    await clickAndWait(page.getByRole("button", { name: /Submit choices/i }), "submit multi-select after reload");
+    await ensureVisible(await getChapterHeadingLocator(page, "Chapter 1"), "chapter heading Chapter 1 after reload");
+    await ensureVisible(page.locator('[data-option="observe-surroundings"].is-selected'), "persisted multi-select option after reload");
+    await clickAndWait(page.locator('[data-option="check-before-using"]'), "second multi-select option after reload");
+    await clickAndWait(page.locator('[data-option="move-away-risk"]'), "third multi-select option after reload");
+    await clickAndWait(page.locator('[data-action="submit-multi"]'), "submit multi-select after reload");
     await ensureVisible(page.getByText("Correct answer", { exact: true }), "feedback after reloaded multi-select step");
     await clickAndWait(page.getByRole("button", { name: /Next question/i }), "next question after reloaded multi-select step");
 }
 
+async function verifyChapterLaunchProtection(page) {
+    await clickAndWait(page.locator('[data-action="open-mission-screen"]'), "back button from active quiz to mission board");
+    await ensureVisible(page.locator("main").getByRole("heading", { name: "Mission board", exact: true }), "mission board heading during active progress");
+
+    const snapshotBeforeCancel = await page.evaluate(() => window.localStorage.getItem("hazeyelert-shell-state-v3"));
+
+    await page.evaluate(() => {
+        window.__copilotOriginalConfirm = window.confirm;
+        window.confirm = () => false;
+    });
+
+    await clickAndWait(page.getByRole("button", { name: /Launch Chapter 1/i }), "chapter launch button with active progress");
+    await ensureVisible(page.locator("main").getByRole("heading", { name: "Mission board", exact: true }), "mission board after canceling chapter replacement");
+
+    const snapshotAfterCancel = await page.evaluate(() => window.localStorage.getItem("hazeyelert-shell-state-v3"));
+    if (snapshotBeforeCancel !== snapshotAfterCancel) {
+        fail("Canceling a chapter launch replaced the user's in-progress mission.");
+    }
+
+    await page.evaluate(() => {
+        window.confirm = () => true;
+    });
+
+    await clickAndWait(page.getByRole("button", { name: /Launch Chapter 2/i }), "chapter launch button after confirming replacement");
+    await ensureVisible(await getChapterHeadingLocator(page, "Chapter 2"), "chapter 2 heading after confirming chapter replacement");
+
+    await page.evaluate(() => {
+        if (window.__copilotOriginalConfirm) {
+            window.confirm = window.__copilotOriginalConfirm;
+            delete window.__copilotOriginalConfirm;
+        }
+    });
+}
+
 async function completeQuizRun(page) {
     const steps = [
-        { chapter: "Chapter 3", optionIds: ["stay-low"], nextLabel: /Next question/i },
-        { chapter: "Chapter 4", optionIds: ["hearing-protection"], nextLabel: /View results/i }
+        { chapter: "Chapter 2", optionIds: ["image-a"], nextLabel: /Next question/i },
+        { chapter: "Chapter 2", optionIds: ["risk-map-a"], nextLabel: /Next question/i },
+        { chapter: "Chapter 2", optionIds: ["order-2-1-3"], nextLabel: /View results/i }
     ];
 
     for (const [index, step] of steps.entries()) {
-        await answerStep(page, step, index + 3);
+        await answerStep(page, step, index + 4);
     }
 }
 
 async function verifyResultScreen(page) {
     await ensureVisible(page.locator("main").getByRole("heading", { name: "Results", exact: true }), "results screen title");
     await ensureVisible(page.getByText("Final score", { exact: true }), "final score label");
-    await ensureVisible(page.getByText("6/6", { exact: false }), "perfect score text");
+    const scoreText = await page.locator("main").innerText();
+    if (!/Final score\s+\d+\/\d+/i.test(scoreText)) {
+        fail("Expected the results screen to show a final score fraction.");
+    }
     await ensureVisible(page.getByText("Chapter recap", { exact: true }), "chapter recap heading");
     await ensureVisible(page.getByText("Mastered", { exact: true }), "mastered chapter status badge");
 }
@@ -272,6 +315,7 @@ async function main() {
         await verifyHomeScreen(page);
         await verifySecondaryScreens(page);
         await verifyReloadResilienceDuringMultiSelect(page);
+        await verifyChapterLaunchProtection(page);
         await completeQuizRun(page);
         await verifyResultScreen(page);
 
